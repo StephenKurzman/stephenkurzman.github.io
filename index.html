@@ -52,8 +52,8 @@
     }
 
     .hero {
-      padding: 110px 0 90px;
-      max-width: 900px;
+      padding: 90px 0 70px;
+      max-width: 940px;
     }
 
     .eyebrow {
@@ -63,18 +63,18 @@
     }
 
     h1 {
-  font-size: clamp(46px, 6.2vw, 78px);
-  line-height: 1.04;
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  margin-bottom: 28px;
-}
+      font-size: clamp(46px, 6.2vw, 78px);
+      line-height: 1.04;
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      margin-bottom: 28px;
+    }
 
     .hero p {
-  font-size: clamp(19px, 1.8vw, 26px);
-  max-width: 760px;
-  color: #444444;
-}
+      font-size: clamp(19px, 1.8vw, 26px);
+      max-width: 760px;
+      color: #444444;
+    }
 
     .section {
       padding: 90px 0;
@@ -90,7 +90,11 @@
     .work-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 60px 30px;
+      gap: 70px 30px;
+    }
+
+    .project-card a {
+      display: block;
     }
 
     .project-image {
@@ -116,6 +120,28 @@
       font-size: 15px;
     }
 
+    .project-description {
+      margin-top: 16px;
+      max-width: 520px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555555;
+    }
+
+    .project-link {
+      margin-top: 18px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+
+    .project-card {
+      transition: opacity 0.2s ease;
+    }
+
+    .project-card:hover {
+      opacity: 0.72;
+    }
+
     .expertise-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -130,6 +156,12 @@
     .expertise-item p {
       color: #555555;
       max-width: 320px;
+    }
+
+    .about-text {
+      max-width: 800px;
+      font-size: 24px;
+      line-height: 1.55;
     }
 
     footer {
@@ -155,12 +187,16 @@
       }
 
       .hero {
-        padding: 80px 0 60px;
+        padding: 70px 0 55px;
       }
 
       .work-grid,
       .expertise-grid {
         grid-template-columns: 1fr;
+      }
+
+      .about-text {
+        font-size: 21px;
       }
 
       footer {
@@ -185,221 +221,216 @@
       </nav>
     </header>
 
-
     <main>
 
       <section class="hero">
+
         <div class="eyebrow">
           PRODUCT DEVELOPMENT · SOFT GOODS · MANUFACTURING
         </div>
 
-       <h1>
-  Turning design intent into manufacturable products.
-</h1>
+        <h1>
+          Turning design intent into manufacturable products.
+        </h1>
 
-<p>
-  Product development leader with deep soft-goods expertise, connecting
-  design, engineering, materials, suppliers, and manufacturing from concept
-  through production.
-</p>
+        <p>
+          Product development leader with deep soft-goods expertise, connecting
+          design, engineering, materials, suppliers, and manufacturing from concept
+          through production.
+        </p>
+
       </section>
 
 
-    <section class="section" id="work">
-  <div class="section-label">SELECTED WORK</div>
+      <section class="section" id="work">
 
-  <div class="work-grid">
+        <div class="section-label">SELECTED WORK</div>
 
-    <article class="project-card">
-      <a href="#">
-        <div class="project-image"></div>
+        <div class="work-grid">
 
-        <div class="project-number">01</div>
+          <article class="project-card">
+            <a href="#">
 
-        <div class="project-title">
-          Complex Soft-Goods Development
+              <div class="project-image"></div>
+
+              <div class="project-number">01</div>
+
+              <div class="project-title">
+                Complex Soft-Goods Development
+              </div>
+
+              <div class="project-meta">
+                Materials · Patterning · Construction · Craftsmanship
+              </div>
+
+              <p class="project-description">
+                Development of complex sewn and flexible-material assemblies with a
+                focus on fit, surface quality, construction strategy, and repeatable execution.
+              </p>
+
+              <div class="project-link">
+                VIEW CASE STUDY →
+              </div>
+
+            </a>
+          </article>
+
+
+          <article class="project-card">
+            <a href="#">
+
+              <div class="project-image"></div>
+
+              <div class="project-number">02</div>
+
+              <div class="project-title">
+                Design to Manufacturing
+              </div>
+
+              <div class="project-meta">
+                DFM · Prototyping · Engineering Integration · Production
+              </div>
+
+              <p class="project-description">
+                Translating design intent into manufacturable solutions through
+                iterative development, cross-functional engineering, and production readiness.
+              </p>
+
+              <div class="project-link">
+                VIEW CASE STUDY →
+              </div>
+
+            </a>
+          </article>
+
+
+          <article class="project-card">
+            <a href="#">
+
+              <div class="project-image"></div>
+
+              <div class="project-number">03</div>
+
+              <div class="project-title">
+                Supplier Industrialization
+              </div>
+
+              <div class="project-meta">
+                Process Development · Quality · Manufacturing Readiness · Scale
+              </div>
+
+              <p class="project-description">
+                Developing supplier capability, process discipline, and quality systems
+                to support repeatable production and scalable manufacturing.
+              </p>
+
+              <div class="project-link">
+                VIEW CASE STUDY →
+              </div>
+
+            </a>
+          </article>
+
+
+          <article class="project-card">
+            <a href="#">
+
+              <div class="project-image"></div>
+
+              <div class="project-number">04</div>
+
+              <div class="project-title">
+                Product & Design Leadership
+              </div>
+
+              <div class="project-meta">
+                Cross-Functional Direction · Systems · Documentation · Execution
+              </div>
+
+              <p class="project-description">
+                Leading development across design, engineering, manufacturing,
+                quality, supply chain, and external partners to move complex products forward.
+              </p>
+
+              <div class="project-link">
+                VIEW CASE STUDY →
+              </div>
+
+            </a>
+          </article>
+
         </div>
 
-        <div class="project-meta">
-          Materials · Patterning · Construction · Craftsmanship
-        </div>
-.project-card a {
-  display: block;
-}
-
-.project-description {
-  margin-top: 16px;
-  max-width: 520px;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #555555;
-}
-
-.project-link {
-  margin-top: 18px;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-}
-
-.project-card {
-  transition: opacity 0.2s ease;
-}
-
-.project-card:hover {
-  opacity: 0.72;
-}
-        
-        <p class="project-description">
-          Development of complex sewn and flexible-material assemblies with a
-          focus on fit, surface quality, construction strategy, and repeatable execution.
-        </p>
-
-        <div class="project-link">VIEW CASE STUDY →</div>
-      </a>
-    </article>
+      </section>
 
 
-    <article class="project-card">
-      <a href="#">
-        <div class="project-image"></div>
+      <section class="section" id="expertise">
 
-        <div class="project-number">02</div>
+        <div class="section-label">EXPERTISE</div>
 
-        <div class="project-title">
-          Design to Manufacturing
+        <div class="expertise-grid">
+
+          <div class="expertise-item">
+
+            <h3>Soft Goods & Materials</h3>
+
+            <p>
+              Sewn construction, flexible materials, pattern development,
+              foam systems, surface quality, and craftsmanship.
+            </p>
+
+          </div>
+
+
+          <div class="expertise-item">
+
+            <h3>DFM & Production</h3>
+
+            <p>
+              Translating design requirements into repeatable manufacturing
+              methods, specifications, quality standards, and scalable processes.
+            </p>
+
+          </div>
+
+
+          <div class="expertise-item">
+
+            <h3>Leadership & Suppliers</h3>
+
+            <p>
+              Cross-functional development across design, engineering,
+              manufacturing, quality, supply chain, and external partners.
+            </p>
+
+          </div>
+
         </div>
 
-        <div class="project-meta">
-          DFM · Prototyping · Engineering Integration · Production
-        </div>
-.project-card a {
-  display: block;
-}
-
-.project-description {
-  margin-top: 16px;
-  max-width: 520px;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #555555;
-}
-
-.project-link {
-  margin-top: 18px;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-}
-
-.project-card {
-  transition: opacity 0.2s ease;
-}
-
-.project-card:hover {
-  opacity: 0.72;
-}
-        
-        <p class="project-description">
-          Translating design intent into manufacturable solutions through
-          iterative development, cross-functional engineering, and production readiness.
-        </p>
-
-        <div class="project-link">VIEW CASE STUDY →</div>
-      </a>
-    </article>
-
-
-    <article class="project-card">
-      <a href="#">
-        <div class="project-image"></div>
-
-        <div class="project-number">03</div>
-
-        <div class="project-title">
-          Supplier Industrialization
-        </div>
-
-        <div class="project-meta">
-          Process Development · Quality · Manufacturing Readiness · Scale
-        </div>
-.project-card a {
-  display: block;
-}
-
-.project-description {
-  margin-top: 16px;
-  max-width: 520px;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #555555;
-}
-
-.project-link {
-  margin-top: 18px;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-}
-
-.project-card {
-  transition: opacity 0.2s ease;
-}
-
-.project-card:hover {
-  opacity: 0.72;
-}
-        
-        <p class="project-description">
-          Developing supplier capability, process discipline, and quality systems
-          to support repeatable production and scalable manufacturing.
-        </p>
-
-        <div class="project-link">VIEW CASE STUDY →</div>
-      </a>
-    </article>
-
-
-    <article class="project-card">
-      <a href="#">
-        <div class="project-image"></div>
-
-        <div class="project-number">04</div>
-
-        <div class="project-title">
-          Product & Design Leadership
-        </div>
-
-        <div class="project-meta">
-          Cross-Functional Direction · Systems · Documentation · Execution
-        </div>
-
-        <p class="project-description">
-          Leading development across design, engineering, manufacturing,
-          quality, supply chain, and external partners to move complex products forward.
-        </p>
-
-        <div class="project-link">VIEW CASE STUDY →</div>
-      </a>
-    </article>
-
-  </div>
-</section>
+      </section>
 
 
       <section class="section" id="about">
+
         <div class="section-label">ABOUT</div>
 
-        <div style="max-width: 800px; font-size: 24px; line-height: 1.55;">
+        <div class="about-text">
           I work at the intersection of design and manufacturing, helping turn
           ambitious product intent into physical solutions that are refined,
           manufacturable, and repeatable at scale.
         </div>
+
       </section>
 
     </main>
 
 
     <footer>
+
       <div>Stephen Kurzman</div>
+
       <div>San Francisco Bay Area</div>
+
     </footer>
 
   </div>
