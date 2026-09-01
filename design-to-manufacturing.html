@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kindred EV VW Bus Interior Development | Stephen Kurzman</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #111; background: #fff; line-height: 1.5; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    .container { width: min(1200px, 90%); margin: 0 auto; }
+
+    header { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; border-bottom: 1px solid #ddd; }
+    .name { font-size: 20px; font-weight: 700; letter-spacing: .02em; }
+    nav { display: flex; gap: 28px; font-size: 13px; letter-spacing: .10em; }
+    nav a:hover { opacity: .55; }
+
+    .project-head { padding: 70px 0 48px; }
+    .back { display: inline-block; margin-bottom: 42px; font-size: 11px; letter-spacing: .14em; color: #555; }
+    .kicker { font-size: 12px; letter-spacing: .16em; margin-bottom: 18px; }
+    h1 { max-width: 980px; font-size: clamp(42px, 6vw, 76px); line-height: 1.03; font-weight: 600; letter-spacing: -.035em; margin-bottom: 28px; }
+    .intro { max-width: 830px; color: #444; font-size: clamp(19px, 2vw, 26px); line-height: 1.5; }
+
+    .hero-image { margin-bottom: 74px; aspect-ratio: 16/9; overflow: hidden; background: #eee; }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+    .meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; padding: 28px 0 70px; border-top: 1px solid #ddd; }
+    .meta-label { font-size: 10px; letter-spacing: .14em; color: #777; margin-bottom: 7px; }
+    .meta-value { font-size: 15px; line-height: 1.5; }
+
+    .section { padding: 76px 0; border-top: 1px solid #ddd; }
+    .section-label { font-size: 11px; letter-spacing: .16em; margin-bottom: 30px; }
+    .two-col { display: grid; grid-template-columns: .9fr 1.6fr; gap: 80px; align-items: start; }
+    .section h2 { font-size: clamp(30px, 3.2vw, 48px); line-height: 1.08; letter-spacing: -.025em; font-weight: 600; }
+    .body-copy { max-width: 760px; color: #444; font-size: 17px; line-height: 1.75; }
+
+    .image-full { margin: 54px 0 18px; }
+    .image-full img { max-height: 780px; object-fit: cover; }
+    .caption { font-size: 12px; line-height: 1.55; color: #666; max-width: 820px; }
+
+    .image-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 54px; }
+    .image-pair figure { min-width: 0; }
+    .image-pair img { aspect-ratio: 4/3; height: 100%; object-fit: cover; }
+    figure figcaption { margin-top: 12px; font-size: 12px; color: #666; line-height: 1.55; }
+
+    .decisions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; margin-top: 44px; border-top: 1px solid #ddd; }
+    .decision { padding: 28px 0; border-bottom: 1px solid #ddd; }
+    .decision h3 { font-size: 18px; margin-bottom: 10px; }
+    .decision p { color: #555; font-size: 15px; line-height: 1.65; }
+
+    .result { max-width: 900px; font-size: clamp(24px, 3vw, 38px); line-height: 1.45; letter-spacing: -.015em; }
+
+    .next { padding: 64px 0 76px; border-top: 1px solid #ddd; display: flex; justify-content: space-between; gap: 30px; font-size: 12px; letter-spacing: .12em; }
+
+    @media (max-width: 800px) {
+      header { align-items: flex-start; gap: 24px; }
+      nav { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+      .project-head { padding-top: 52px; }
+      .meta-grid { grid-template-columns: repeat(2, 1fr); }
+      .two-col { grid-template-columns: 1fr; gap: 24px; }
+      .image-pair, .decisions { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="name"><a href="index.html">STEPHEN KURZMAN</a></div>
+      <nav>
+        <a href="index.html#work">WORK</a>
+        <a href="index.html#expertise">EXPERTISE</a>
+        <a href="index.html#about">ABOUT</a>
+        <a href="#">RESUME</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-head">
+        <a class="back" href="index.html#work">← BACK TO SELECTED WORK</a>
+        <div class="kicker">KINDRED MOTORWORKS · DESIGN TO MANUFACTURING</div>
+        <h1>EV VW Bus Interior Development</h1>
+        <p class="intro">Translating a visually developed one-off prototype into a documented, supplier-ready interior system designed for repeatable low-volume production.</p>
+      </section>
+
+      <div class="hero-image"><img src="kindred-vw-bus-hero.jpg" alt="Kindred EV VW Bus completed vehicle"></div>
+
+      <section class="meta-grid">
+        <div><div class="meta-label">ROLE</div><div class="meta-value">Program Manager — Interior Development</div></div>
+        <div><div class="meta-label">TIMELINE</div><div class="meta-value">Approximately 13 months</div></div>
+        <div><div class="meta-label">SCOPE</div><div class="meta-value">Complete interior & soft-trim production readiness</div></div>
+        <div><div class="meta-label">FOCUS</div><div class="meta-value">DFM · Packaging · Suppliers · Quality · Production</div></div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">01 · THE CHALLENGE</div>
+        <div class="two-col">
+          <h2>Preserve the experience. Rebuild the system.</h2>
+          <div class="body-copy">Kindred had an existing high-level interior prototype that successfully established the desired cabin experience, but it had not been engineered for repeatable production. The program required translating that one-off concept into controlled, manufacturable components while integrating an in-cabin battery pack, front and rear HVAC, passenger-seat swivel functionality, seating, carpeting, side trim, headliner and roof systems, and wood furniture.</div>
+        </div>
+        <div class="image-full"><img src="kindred-vw-bus-front-interior.jpg" alt="Finished front interior of Kindred EV VW Bus"></div>
+        <div class="caption">The original design language had to be preserved while the underlying construction, packaging, documentation, and supplier strategy were rebuilt around production requirements.</div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">02 · PACKAGING & ENGINEERING INTEGRATION</div>
+        <div class="two-col">
+          <h2>Resolving the architecture beneath the visible surfaces.</h2>
+          <div class="body-copy">I coordinated design, engineering, thermal, R&amp;D, and external development resources to resolve interior architecture around the battery system, HVAC, seating, furniture, and trim interfaces. My role centered on program ownership, technical coordination, packaging decisions, and production readiness rather than personally owning all CAD geometry.</div>
+        </div>
+        <div class="image-full"><img src="kindred-vw-bus-cad.png" alt="CAD packaging view of Kindred EV VW Bus interior architecture"></div>
+        <div class="caption">Cross-functional packaging development integrating seating, HVAC, electrical architecture, furniture, trim systems, and vehicle structure.</div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">03 · DEVELOPMENT TO PRODUCTION INTENT</div>
+        <div class="two-col">
+          <h2>Moving from prototype craftsmanship to controlled assemblies.</h2>
+          <div class="body-copy">The initial interior relied heavily on one-off solutions. I drove the transition toward production-intent parts by establishing drawings, specifications, PLM documentation, supplier ownership, change control, quality requirements, and repeatable assembly expectations.</div>
+        </div>
+        <div class="image-pair">
+          <figure>
+            <img src="kindred-vw-bus-development.jpg" alt="Kindred EV VW Bus interior during development">
+            <figcaption>Interior development in progress, exposing the structural and packaging interfaces that had to be converted into repeatable assemblies.</figcaption>
+          </figure>
+          <figure>
+            <img src="kindred-vw-bus-hands-on.jpg" alt="Stephen Kurzman evaluating Kindred VW Bus interior development">
+            <figcaption>Hands-on evaluation of trim fit, component interfaces, and production-intent execution during vehicle development.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">04 · KEY DEVELOPMENT DECISIONS</div>
+        <div class="two-col">
+          <h2>Balancing design, packaging, suppliers, quality, and cost.</h2>
+          <div class="body-copy">The program required continuous tradeoffs across aesthetics, function, supplier capability, assembly, serviceability, and production cost.</div>
+        </div>
+        <div class="decisions">
+          <div class="decision"><h3>Architecture & Packaging</h3><p>Reworked interior architecture around the battery, HVAC systems, and passenger-seat swivel while protecting the intended cabin experience.</p></div>
+          <div class="decision"><h3>Materials & Construction</h3><p>Led material selection and approval with Design, balancing appearance, durability, manufacturability, supplier capability, and production needs.</p></div>
+          <div class="decision"><h3>Supplier Industrialization</h3><p>Down-selected and developed outside partners for soft trim, seating, interior components, and furniture with emphasis on repeatability and scale.</p></div>
+          <div class="decision"><h3>Production Definition</h3><p>Established drawings, specifications, PLM records, quality criteria, process documentation, and change control for production-intent components.</p></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">05 · FINISHED SYSTEM</div>
+        <div class="two-col">
+          <h2>A cohesive cabin built from controlled subsystems.</h2>
+          <div class="body-copy">The resulting interior integrated seating, soft trim, side panels, flooring, furniture, HVAC, and packaging requirements into a cohesive architecture that could be managed through suppliers and repeated in low-volume production.</div>
+        </div>
+        <div class="image-pair">
+          <figure>
+            <img src="kindred-vw-bus-rear-interior.jpg" alt="Finished rear cabin of Kindred EV VW Bus">
+            <figcaption>Completed rear cabin showing upholstery, flooring, furniture, painted structures, side trim, and table integration.</figcaption>
+          </figure>
+          <figure>
+            <img src="kindred-vw-bus-swivel.jpg" alt="Finished Kindred VW Bus cabin showing swivel passenger seat and table">
+            <figcaption>Finished cabin architecture supporting the transition between driving and living spaces, including passenger-seat swivel functionality.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">06 · OUTCOME</div>
+        <div class="result">In approximately 13 months, the program moved from a non-scalable one-off prototype to production-intent interior systems with integrated packaging, documented components, supplier ownership, and clearer quality and process controls.</div>
+        <div class="image-full"><img src="kindred-vw-bus-lifestyle.jpg" alt="Kindred EV VW Bus interior in use"></div>
+        <div class="caption">The engineering and manufacturing work supported the original goal: preserving a distinctive, functional cabin experience while making it repeatable.</div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">PROGRAM IMPACT</div>
+        <div class="two-col">
+          <h2>Beyond a single vehicle.</h2>
+          <div class="body-copy">The development methods, documentation, and production-readiness structure established during the program helped shape Kindred's approach to subsequent vehicle development. The work also led into broader design leadership responsibilities focused on improving early development structure and production readiness across future models.</div>
+        </div>
+      </section>
+
+      <div class="next">
+        <a href="index.html#work">← SELECTED WORK</a>
+        <a href="index.html">HOME →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
