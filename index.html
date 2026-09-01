@@ -13,6 +13,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: #111111;
@@ -34,7 +38,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 32px 0;
+      padding: 30px 0;
       border-bottom: 1px solid #dddddd;
     }
 
@@ -47,18 +51,22 @@
     nav {
       display: flex;
       gap: 28px;
-      font-size: 14px;
-      letter-spacing: 0.08em;
+      font-size: 13px;
+      letter-spacing: 0.10em;
+    }
+
+    nav a:hover {
+      opacity: 0.55;
     }
 
     .hero {
-      padding: 90px 0 70px;
+      padding: 88px 0 74px;
       max-width: 940px;
     }
 
     .eyebrow {
-      font-size: 14px;
-      letter-spacing: 0.14em;
+      font-size: 13px;
+      letter-spacing: 0.15em;
       margin-bottom: 24px;
     }
 
@@ -77,20 +85,25 @@
     }
 
     .section {
-      padding: 90px 0;
+      padding: 88px 0;
       border-top: 1px solid #dddddd;
     }
 
     .section-label {
-      font-size: 13px;
-      letter-spacing: 0.14em;
-      margin-bottom: 42px;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      margin-bottom: 44px;
     }
 
     .work-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 70px 30px;
+      column-gap: 40px;
+      row-gap: 92px;
+    }
+
+    .project-card {
+      min-width: 0;
     }
 
     .project-card a {
@@ -99,78 +112,101 @@
 
     .project-image {
       background: #eeeeee;
-      aspect-ratio: 4 / 3;
-      margin-bottom: 20px;
+      aspect-ratio: 16 / 10;
+      margin-bottom: 22px;
+      overflow: hidden;
+    }
+
+    .project-image::after {
+      content: "PROJECT IMAGE";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: #999999;
+      font-size: 11px;
+      letter-spacing: 0.14em;
     }
 
     .project-number {
-      font-size: 12px;
+      font-size: 11px;
       color: #777777;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      letter-spacing: 0.08em;
     }
 
     .project-title {
-      font-size: 24px;
+      font-size: clamp(22px, 2vw, 29px);
+      line-height: 1.15;
       font-weight: 600;
-      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
     }
 
     .project-meta {
       color: #666666;
-      font-size: 15px;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     .project-description {
-      margin-top: 16px;
+      margin-top: 18px;
       max-width: 520px;
-      font-size: 16px;
-      line-height: 1.6;
+      font-size: 15px;
+      line-height: 1.65;
       color: #555555;
     }
 
     .project-link {
-      margin-top: 18px;
-      font-size: 12px;
-      letter-spacing: 0.12em;
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 1px solid #e4e4e4;
+      font-size: 11px;
+      letter-spacing: 0.14em;
     }
 
-    .project-card {
-      transition: opacity 0.2s ease;
-    }
-
-    .project-card:hover {
-      opacity: 0.72;
+    .project-card a:hover .project-link {
+      opacity: 0.55;
     }
 
     .expertise-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
+      gap: 54px;
+    }
+
+    .expertise-item {
+      border-top: 1px solid #d9d9d9;
+      padding-top: 20px;
     }
 
     .expertise-item h3 {
       font-size: 20px;
       margin-bottom: 12px;
+      letter-spacing: -0.01em;
     }
 
     .expertise-item p {
       color: #555555;
       max-width: 320px;
+      font-size: 15px;
+      line-height: 1.65;
     }
 
     .about-text {
-      max-width: 800px;
-      font-size: 24px;
-      line-height: 1.55;
+      max-width: 860px;
+      font-size: clamp(22px, 2.4vw, 31px);
+      line-height: 1.5;
+      letter-spacing: -0.015em;
     }
 
     footer {
-      padding: 50px 0;
+      padding: 44px 0;
       border-top: 1px solid #dddddd;
       display: flex;
       justify-content: space-between;
       gap: 20px;
-      font-size: 14px;
+      font-size: 13px;
       color: #555555;
     }
 
@@ -187,7 +223,11 @@
       }
 
       .hero {
-        padding: 70px 0 55px;
+        padding: 68px 0 56px;
+      }
+
+      .section {
+        padding: 68px 0;
       }
 
       .work-grid,
@@ -195,8 +235,12 @@
         grid-template-columns: 1fr;
       }
 
-      .about-text {
-        font-size: 21px;
+      .work-grid {
+        row-gap: 68px;
+      }
+
+      .expertise-grid {
+        gap: 38px;
       }
 
       footer {
