@@ -3,176 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Soft Goods & Physical Product Development | Stephen Kurzman</title>
-  <meta name="description" content="A selected body of soft-goods and physical product development work by Stephen Kurzman, spanning materials, foam, patterns, sewing construction, prototyping, craftsmanship, and repeatable production.">
-
+  <meta name="description" content="Selected Custom Stitching work by Stephen Kurzman spanning bespoke interiors, soft-goods development, foam, patternmaking, physical prototyping, craftsmanship, and repeatable production.">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: Arial, Helvetica, sans-serif; color: #111; background: #fff; line-height: 1.5; }
     a { color: inherit; text-decoration: none; }
     img { display: block; width: 100%; }
-
-    .container { width: min(1200px, 90%); margin: 0 auto; }
-
-    header {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 30px 0; border-bottom: 1px solid #ddd;
-    }
-
+    .container { width: min(1280px, 90%); margin: 0 auto; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; border-bottom: 1px solid #ddd; }
     .name { font-size: 20px; font-weight: 700; letter-spacing: .02em; }
     nav { display: flex; gap: 28px; font-size: 13px; letter-spacing: .10em; }
     nav a:hover { opacity: .55; }
 
-    .project-head { padding: 70px 0 48px; }
-
-    .back {
-      display: inline-block; margin-bottom: 42px;
-      font-size: 11px; letter-spacing: .14em; color: #555;
-    }
-
+    .page-head { padding: 72px 0 58px; max-width: 1000px; }
+    .back { display: inline-block; margin-bottom: 46px; font-size: 11px; letter-spacing: .14em; color: #666; }
     .kicker { font-size: 12px; letter-spacing: .16em; margin-bottom: 18px; }
+    h1 { font-size: clamp(44px, 6.3vw, 80px); line-height: 1.02; font-weight: 600; letter-spacing: -.04em; margin-bottom: 28px; }
+    .intro { max-width: 880px; font-size: clamp(19px, 2vw, 26px); line-height: 1.55; color: #444; }
 
-    h1 {
-      max-width: 1000px; font-size: clamp(42px, 6vw, 76px);
-      line-height: 1.03; font-weight: 600;
-      letter-spacing: -.035em; margin-bottom: 28px;
-    }
+    .hero { margin-bottom: 92px; }
+    .hero img { width: 100%; max-height: 900px; object-fit: cover; }
 
-    .intro {
-      max-width: 880px; color: #444;
-      font-size: clamp(19px, 2vw, 26px); line-height: 1.55;
-    }
+    .project { padding: 96px 0 104px; border-top: 1px solid #ddd; }
+    .project-no { font-size: 11px; letter-spacing: .14em; color: #777; margin-bottom: 18px; }
+    .project-title { max-width: 850px; font-size: clamp(32px, 4vw, 54px); line-height: 1.07; letter-spacing: -.03em; font-weight: 600; }
+    .project-copy { max-width: 760px; margin-top: 24px; font-size: 17px; line-height: 1.75; color: #444; }
 
-    .hero-grid {
-      display: grid; grid-template-columns: 1.35fr .65fr;
-      gap: 20px; margin-bottom: 72px;
-    }
+    .wide { margin-top: 58px; }
+    .wide img { max-height: 900px; object-fit: cover; }
+    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 34px; align-items: start; }
+    .pair.asym { grid-template-columns: 1.25fr .75fr; }
+    .pair.reverse { grid-template-columns: .78fr 1.22fr; }
+    .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
+    .portrait img { aspect-ratio: 4/5; object-fit: cover; }
+    .square img { aspect-ratio: 1/1; object-fit: cover; }
+    .landscape img { aspect-ratio: 4/3; object-fit: cover; }
+    .caption { margin-top: 11px; font-size: 12px; line-height: 1.55; color: #666; max-width: 620px; }
+    .tech { font-weight: 700; color: #222; }
 
-    .hero-main, .hero-side {
-      overflow: hidden; background: #eee;
-    }
+    .interlude { padding: 110px 0; border-top: 1px solid #ddd; }
+    .interlude img { max-height: 920px; object-fit: cover; }
+    .interlude-note { margin-top: 18px; max-width: 780px; font-size: 13px; line-height: 1.6; color: #666; letter-spacing: .01em; }
 
-    .hero-main { aspect-ratio: 4/3; }
-    .hero-side { aspect-ratio: 1/1; }
+    .selected { padding: 98px 0 108px; border-top: 1px solid #ddd; }
+    .selected-head { font-size: 12px; letter-spacing: .16em; margin-bottom: 34px; }
+    .selected-grid { display: grid; grid-template-columns: 1fr .72fr; gap: 22px; }
+    .selected-stack { display: grid; grid-template-rows: 1fr 1fr; gap: 22px; }
+    .selected-grid img { height: 100%; object-fit: cover; }
 
-    .hero-main img, .hero-side img {
-      width: 100%; height: 100%; object-fit: cover;
-    }
+    .production-stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 54px; border-top: 1px solid #ddd; }
+    .stat { padding: 26px 28px 26px 0; border-bottom: 1px solid #ddd; }
+    .stat + .stat { padding-left: 28px; border-left: 1px solid #ddd; }
+    .stat-big { font-size: clamp(28px, 3vw, 42px); letter-spacing: -.025em; margin-bottom: 8px; }
+    .stat-copy { font-size: 14px; line-height: 1.55; color: #555; }
 
-    .hero-side-stack {
-      display: grid; grid-template-rows: 1fr 1fr; gap: 20px;
-    }
+    .production-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 54px; }
+    .production-grid img { aspect-ratio: 4/3; object-fit: cover; }
+    .production-wide { margin-top: 18px; display: grid; grid-template-columns: 1.3fr .7fr; gap: 18px; }
+    .production-wide img { height: 100%; object-fit: cover; }
 
-    .meta-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 26px; padding: 28px 0 70px;
-      border-top: 1px solid #ddd;
-    }
+    .philosophy { padding: 130px 0 140px; border-top: 1px solid #ddd; }
+    .philosophy-label { font-size: 11px; letter-spacing: .16em; margin-bottom: 34px; }
+    .philosophy-text { max-width: 1050px; font-size: clamp(32px, 4.3vw, 60px); line-height: 1.16; letter-spacing: -.035em; font-weight: 500; }
 
-    .meta-label {
-      font-size: 10px; letter-spacing: .14em;
-      color: #777; margin-bottom: 7px;
-    }
-
-    .meta-value { font-size: 15px; line-height: 1.5; }
-
-    .section {
-      padding: 76px 0; border-top: 1px solid #ddd;
-    }
-
-    .section-label {
-      font-size: 11px; letter-spacing: .16em; margin-bottom: 30px;
-    }
-
-    .two-col {
-      display: grid; grid-template-columns: .9fr 1.6fr;
-      gap: 80px; align-items: start;
-    }
-
-    .section h2 {
-      font-size: clamp(30px, 3.2vw, 48px);
-      line-height: 1.08; letter-spacing: -.025em;
-      font-weight: 600;
-    }
-
-    .body-copy {
-      max-width: 760px; color: #444;
-      font-size: 17px; line-height: 1.75;
-    }
-
-    .image-pair {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 28px; margin-top: 54px;
-    }
-
-    .image-trio {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 20px; margin-top: 54px;
-    }
-
-    figure { min-width: 0; }
-
-    .image-pair img {
-      aspect-ratio: 4/3; height: 100%; object-fit: cover;
-    }
-
-    .image-trio img {
-      aspect-ratio: 1/1; height: 100%; object-fit: cover;
-    }
-
-    figure figcaption {
-      margin-top: 12px; font-size: 12px;
-      color: #666; line-height: 1.55;
-    }
-
-    .full-image { margin-top: 54px; }
-    .full-image img { max-height: 850px; object-fit: cover; }
-
-    .technical-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 0 40px; margin-top: 44px;
-      border-top: 1px solid #ddd;
-    }
-
-    .technical-item {
-      padding: 28px 0; border-bottom: 1px solid #ddd;
-    }
-
-    .technical-item h3 { font-size: 18px; margin-bottom: 10px; }
-
-    .technical-item p {
-      color: #555; font-size: 15px; line-height: 1.65;
-    }
-
-    .statement {
-      max-width: 980px; font-size: clamp(24px, 3vw, 38px);
-      line-height: 1.45; letter-spacing: -.015em;
-    }
-
-    .next {
-      padding: 64px 0 76px; border-top: 1px solid #ddd;
-      display: flex; justify-content: space-between;
-      gap: 30px; font-size: 12px; letter-spacing: .12em;
-    }
+    .next { padding: 54px 0 74px; border-top: 1px solid #ddd; display: flex; justify-content: space-between; gap: 30px; font-size: 12px; letter-spacing: .12em; }
 
     @media (max-width: 800px) {
       header { align-items: flex-start; gap: 24px; }
       nav { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
-      .project-head { padding-top: 52px; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-side-stack { grid-template-columns: 1fr 1fr; grid-template-rows: none; }
-      .meta-grid { grid-template-columns: repeat(2, 1fr); }
-      .two-col, .image-pair, .image-trio, .technical-grid { grid-template-columns: 1fr; }
-      .image-trio img { aspect-ratio: 4/3; }
+      .page-head { padding-top: 52px; }
+      .project { padding: 70px 0 76px; }
+      .pair, .pair.asym, .pair.reverse, .trio, .selected-grid, .production-grid, .production-wide, .production-stats { grid-template-columns: 1fr; }
+      .selected-stack { grid-template-rows: auto; }
+      .stat + .stat { padding-left: 0; border-left: none; }
+      .philosophy { padding: 90px 0 100px; }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
-
     <header>
       <div class="name"><a href="index.html">STEPHEN KURZMAN</a></div>
       <nav>
@@ -184,288 +95,151 @@
     </header>
 
     <main>
-
-      <section class="project-head">
+      <section class="page-head">
         <a class="back" href="index.html#work">← BACK TO SELECTED WORK</a>
         <div class="kicker">CUSTOM STITCHING CO. · SELECTED BODY OF WORK</div>
-
         <h1>Soft Goods & Physical Product Development</h1>
-
-        <p class="intro">
-          A hands-on body of work spanning material behavior, foam and substrate
-          development, patternmaking, sewing construction, prototype iteration,
-          surface quality, craftsmanship, and repeatable production.
-        </p>
+        <p class="intro">Selected work from a hands-on practice spanning bespoke interiors, seating, materials, foam, pattern development, sewn construction, physical iteration, and repeatable production.</p>
       </section>
 
-      <div class="hero-grid">
-        <div class="hero-main">
-          <img src="custom-soft-hero.jpg" alt="Finished custom automotive interior demonstrating integrated soft-goods development">
-        </div>
-
-        <div class="hero-side-stack">
-          <div class="hero-side">
-            <img src="custom-soft-hands-on.jpg" alt="Hands-on upholstery development and fit work">
-          </div>
-
-          <div class="hero-side">
-            <img src="custom-soft-sewing.jpg" alt="Sewing and soft-goods construction work">
-          </div>
-        </div>
+      <div class="hero">
+        <img src="cs-hero-camaro.jpg" alt="Finished Camaro interior by Custom Stitching Co.">
       </div>
 
-      <section class="meta-grid">
-        <div>
-          <div class="meta-label">ROLE</div>
-          <div class="meta-value">Founder · Product & Manufacturing Lead</div>
+      <section class="project">
+        <div class="project-no">01 · C10</div>
+        <h2 class="project-title">Simple by appearance. Deliberate underneath.</h2>
+        <p class="project-copy">The truck arrived as a bare cab with an open brief for a lighter interior. I selected the materials and developed the seat around both the visual direction and the ergonomic needs of a 6'5&quot; driver, including the foam, bolsters, seam channels, trim and installation. I also developed the carpet and steering-wheel trim to carry the same restrained, 1960s competition-inspired character throughout the cabin.</p>
+
+        <div class="wide"><img src="c10-open.jpg" alt="Finished C10 interior and seat"></div>
+
+        <div class="pair asym">
+          <figure class="landscape">
+            <img src="c10-early.jpg" alt="C10 interior during development">
+            <figcaption class="caption">The interior began as a largely open canvas, allowing the seating position, proportions and material direction to be developed together.</figcaption>
+          </figure>
+          <figure class="portrait">
+            <img src="c10-foam.jpg" alt="C10 seat foam, channels and grommet development">
+            <figcaption class="caption"><span class="tech">Independent retention.</span> Each grommet was retained independently so the insert, foam and trim could move naturally under occupant load rather than being rigidly tied together.</figcaption>
+          </figure>
         </div>
 
-        <div>
-          <div class="meta-label">FOCUS</div>
-          <div class="meta-value">Soft Goods · Patterns · Materials · Construction</div>
+        <div class="pair reverse">
+          <figure class="portrait">
+            <img src="c10-detail.jpg" alt="C10 seat development detail">
+            <figcaption class="caption">Foam geometry, seam channels and trim were refined through physical iterations to keep the seat simple visually while preserving support and comfort.</figcaption>
+          </figure>
+          <div></div>
         </div>
 
-        <div>
-          <div class="meta-label">PRODUCT RANGE</div>
-          <div class="meta-value">Automotive Interiors · Seating · Steering Wheels · Motorcycle Seats</div>
+        <div class="pair">
+          <figure class="square"><img src="c10-wheel-prep.jpg" alt="C10 steering wheel before final trim"></figure>
+          <figure class="square">
+            <img src="c10-wheel-final.jpg" alt="Finished C10 steering wheel trim">
+            <figcaption class="caption">Houndstooth textile, Alcantara micropiping and a three-piece center stripe carried the interior language into a component where alignment and hand-finishing were especially visible.</figcaption>
+          </figure>
         </div>
 
-        <div>
-          <div class="meta-label">PRODUCTION</div>
-          <div class="meta-value">One-off Bespoke Work + Repeat-Production Programs</div>
+        <div class="wide"><img src="c10-final.jpg" alt="Completed C10 interior"></div>
+      </section>
+
+      <section class="interlude">
+        <img src="galaxy-interlude.jpg" alt="Custom red automotive interior by Custom Stitching Co.">
+        <div class="interlude-note">Selected work — material, color and construction developed as a complete interior language.</div>
+      </section>
+
+      <section class="project">
+        <div class="project-no">02 · BRONCO</div>
+        <h2 class="project-title">Precision through restraint.</h2>
+        <p class="project-copy">The interior was intentionally simple and subtle, with a modern influence that complemented the exterior. Starting from provided seat substrates, I developed the seat trim, steering-wheel trim, grab handles and roll-bar wraps from scratch. With restrained surfaces, pattern accuracy, hand stitching and material transitions became especially visible.</p>
+
+        <div class="wide"><img src="bronco-open.jpg" alt="Finished Bronco interior"></div>
+
+        <div class="pair">
+          <figure class="landscape"><img src="bronco-foam.jpg" alt="Bronco bare seat foam and substrate"><figcaption class="caption">Provided substrates established the hard points; all visible trim construction was developed from scratch.</figcaption></figure>
+          <figure class="landscape"><img src="bronco-pattern.jpg" alt="Bronco plaid seat trim development"><figcaption class="caption">Pattern geometry and material alignment had to remain highly controlled because the restrained design exposed variation immediately.</figcaption></figure>
+        </div>
+
+        <div class="trio">
+          <figure class="square"><img src="bronco-pocket-pattern.jpg" alt="Bronco seat-pocket pattern development"><figcaption class="caption">Pocket pattern development.</figcaption></figure>
+          <figure class="square"><img src="bronco-pocket-build.jpg" alt="Bronco seat-pocket construction"><figcaption class="caption">Construction and attachment refinement.</figcaption></figure>
+          <figure class="square"><img src="bronco-pocket-final.jpg" alt="Finished Bronco seat pocket with flap"><figcaption class="caption"><span class="tech">Integrated pocket development.</span> The finished flapped pocket remains visually quiet while carrying controlled geometry, attachment placement and hand finishing.</figcaption></figure>
+        </div>
+
+        <div class="pair">
+          <figure class="landscape"><img src="bronco-wheel-before.jpg" alt="Bronco steering wheel before trimming"></figure>
+          <figure class="landscape"><img src="bronco-wheel-final.jpg" alt="Finished Bronco steering wheel trim"><figcaption class="caption">Hand-finished trim carried the same material and construction discipline into the steering wheel.</figcaption></figure>
         </div>
       </section>
 
-      <section class="section">
-        <div class="section-label">01 · TECHNICAL FOUNDATION</div>
-
-        <div class="two-col">
-          <h2>Understanding the product from the material outward.</h2>
-
-          <div class="body-copy">
-            My technical foundation was built through direct ownership of the physical
-            product: foam shape, substrates, material selection, pattern geometry, seam
-            construction, tension, retention, fit, surface definition, and final assembly.
-            The work required predicting how flexible materials would move over complex
-            forms and then developing construction strategies that produced the intended
-            appearance repeatedly.
-          </div>
-        </div>
-
-        <div class="image-pair">
-          <figure>
-            <img src="custom-soft-foam.jpg" alt="Automotive seat foam and substrate development">
-            <figcaption>
-              Foam and substrate development before trim construction — establishing the
-              geometry that ultimately controls fit, support, and surface definition.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="custom-soft-seat-patterns.jpg" alt="Cut and developed automotive seat trim patterns">
-            <figcaption>
-              Pattern and material development translating three-dimensional seating
-              geometry into controlled sewn components.
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-label">02 · PATTERN & CONSTRUCTION DEVELOPMENT</div>
-
-        <div class="two-col">
-          <h2>Turning flexible materials into controlled geometry.</h2>
-
-          <div class="body-copy">
-            Patternmaking is both geometric and material-driven. Each construction has to
-            account for stretch, compression, material thickness, seam allowance, sew
-            sequence, foam interaction, and the way tension changes across compound
-            surfaces. I developed patterns, construction methods, and sewing strategies
-            directly through iterative physical builds.
-          </div>
-        </div>
-
-        <div class="image-pair">
-          <figure>
-            <img src="custom-soft-layout.jpg" alt="Material layout and pattern planning at Custom Stitching">
-            <figcaption>
-              Pattern and material layout work balancing grain, usable area, visual
-              consistency, and construction requirements.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="custom-soft-pattern-sewing.jpg" alt="Complex patterned material being sewn">
-            <figcaption>
-              Sewn construction in development, translating pattern geometry and design
-              intent into repeatable physical components.
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="full-image">
-          <img src="custom-soft-hide-layout.jpg" alt="Large hide layout and pattern placement">
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-label">03 · DETAIL, RETENTION & SURFACE CONTROL</div>
-
-        <div class="two-col">
-          <h2>The visible surface is the result of decisions underneath it.</h2>
-
-          <div class="body-copy">
-            High-quality soft goods depend on more than sewing accuracy. Surface quality is
-            influenced by foam behavior, substrate geometry, seam placement, material
-            thickness, retention, tension, and assembly sequence. These details were
-            developed together rather than treated as independent operations.
-          </div>
-        </div>
-
-        <div class="image-trio">
-          <figure>
-            <img src="custom-soft-wheel-prep.jpg" alt="Steering wheel prepared for soft trim development">
-            <figcaption>Substrate and material preparation.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="custom-soft-wheel-detail.jpg" alt="Hand-stitched steering wheel construction detail">
-            <figcaption>Material tension and hand-stitched seam control.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="custom-soft-wheel-finished.jpg" alt="Completed trimmed steering wheel">
-            <figcaption>Finished component after trim development and assembly.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-label">04 · ITERATE PHYSICALLY</div>
-
-        <div class="two-col">
-          <h2>Build, evaluate, adjust, repeat.</h2>
-
-          <div class="body-copy">
-            Soft-goods development is most effective when decisions are tested in the
-            physical product. I worked directly through cutting, sewing, fitting,
-            disassembly, foam refinement, pattern correction, and final installation,
-            using each iteration to understand the material response and improve the next build.
-          </div>
-        </div>
-
-        <div class="image-pair">
-          <figure>
-            <img src="custom-soft-hands-on.jpg" alt="Hands-on physical development of a soft-goods component">
-            <figcaption>
-              Hands-on fit and construction work used to evaluate geometry, tension,
-              transitions, and assembly.
-            </figcaption>
-          </figure>
-
-          <figure>
-            <img src="custom-soft-sewing.jpg" alt="Stephen Kurzman sewing a soft-goods component">
-            <figcaption>
-              Direct sewing and construction development kept design decisions connected
-              to manufacturability and technician execution.
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-label">05 · RANGE OF EXECUTION</div>
-
-        <div class="two-col">
-          <h2>Different products. The same material discipline.</h2>
-
-          <div class="body-copy">
-            The underlying problem-solving method transferred across seating, full
-            automotive interiors, steering wheels, and motorcycle products: understand the
-            substrate, understand how the material will move, define the construction and
-            retention strategy, then refine the product until the intended surface and
-            function are repeatable.
-          </div>
-        </div>
-
-        <div class="image-trio">
-          <figure>
-            <img src="custom-soft-finished-seat.jpg" alt="Finished custom automotive seat">
-            <figcaption>Finished automotive seating after foam, pattern, and trim development.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="custom-soft-moto-finished.jpg" alt="Finished complex motorcycle seat upholstery">
-            <figcaption>Complex sewn geometry demonstrating material transitions and controlled surface definition.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="custom-soft-installed-seats.jpg" alt="Completed custom automotive seats installed in vehicle">
-            <figcaption>Finished seating integrated into the vehicle environment.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-label">06 · FROM CRAFT TO REPEATABLE PRODUCTION</div>
-
-        <div class="two-col">
-          <h2>Preserving quality while creating a process others can execute.</h2>
-
-          <div class="body-copy">
-            Custom Stitching included both one-off, high-end bespoke work and a
-            repeat-production motorcycle-seat program. I developed the product patterns,
-            construction methods, and staged manufacturing process, broke production into
-            trainable operations, assigned and trained team members, and remained hands-on
-            across every part of the process as needed. The repeat-production line averaged
-            more than 400 units annually and supported wholesale distribution across the
-            United States.
-          </div>
-        </div>
-
-        <div class="technical-grid">
-          <div class="technical-item">
-            <h3>Process Development</h3>
-            <p>
-              Converted individual craft knowledge into defined, staged manufacturing
-              operations that could be taught and repeated.
-            </p>
-          </div>
-
-          <div class="technical-item">
-            <h3>Team Execution</h3>
-            <p>
-              Trained and coordinated a multidisciplinary team while maintaining direct
-              technical involvement in production and quality.
-            </p>
-          </div>
-
-          <div class="technical-item">
-            <h3>Product Scale</h3>
-            <p>
-              Balanced high-end quality expectations with repeat-production needs,
-              wholesale demand, scheduling, and consistent execution.
-            </p>
+      <section class="selected">
+        <div class="selected-head">SELECTED FINISHED WORK · CAMARO</div>
+        <div class="selected-grid">
+          <img src="camaro-detail-door.jpg" alt="Camaro interior door and material detail">
+          <div class="selected-stack">
+            <img src="camaro-detail-console.jpg" alt="Camaro console, door and stitching detail">
+            <img src="camaro-detail-cabin.jpg" alt="Camaro finished cabin detail">
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="section-label">TECHNICAL APPROACH</div>
+      <section class="project">
+        <div class="project-no">03 · FINAL BIKE</div>
+        <h2 class="project-title">From blank structure to complete vision.</h2>
+        <p class="project-copy">I created the seat substrate, developed the seat geometry in foam by hand, and then refined both the seat and console patterns into the finished trim system. Because the visual concept was mine, the form, rider interface, pattern geometry and material execution were developed together rather than treated as separate styling steps.</p>
 
-        <div class="statement">
-          Start with the material limitations. Understand the foam and substrate.
-          Control how the soft material moves. Define retention and construction.
-          Then solve for manufacturability, quality, cost, and timing.
+        <div class="wide"><img src="bike-form.jpg" alt="Motorcycle seat initial form and foam development"></div>
+
+        <div class="pair">
+          <figure class="landscape"><img src="bike-foam.jpg" alt="Refined motorcycle seat foam shape"><figcaption class="caption"><span class="tech">Form development.</span> The initial foam was shaped by hand to establish proportion, transitions and rider interface before final trim patterns were committed.</figcaption></figure>
+          <figure class="landscape"><img src="bike-pattern.jpg" alt="Motorcycle seat and console pattern development"><figcaption class="caption">Pattern refinement translated the hand-developed form into controlled sewn surfaces across the seat and console.</figcaption></figure>
         </div>
+
+        <div class="pair asym">
+          <figure class="landscape"><img src="bike-transition.jpg" alt="Motorcycle seat finished construction transition"></figure>
+          <figure class="portrait"><img src="bike-detail.jpg" alt="Motorcycle seat pattern continuity detail"><figcaption class="caption"><span class="tech">Pattern continuity.</span> Stitched geometry was refined across separate pieces so alignment remained visually controlled after assembly and material tensioning.</figcaption></figure>
+        </div>
+
+        <div class="wide"><img src="bike-final.jpg" alt="Completed custom motorcycle seat and bike"></div>
+      </section>
+
+      <section class="project">
+        <div class="project-no">04 · REPEAT PRODUCTION</div>
+        <h2 class="project-title">Turning craft into a repeatable system.</h2>
+        <p class="project-copy">Demand grew for the Custom Stitching aesthetic without every seat requiring a one-off consultation and development cycle. Using a familiar OEM Harley-Davidson seat architecture as the base, I developed standardized patterns, material-specific pattern variants, construction methods and a staged manufacturing process that preserved the visual identity of the bespoke work while making it trainable and repeatable.</p>
+
+        <div class="production-stats">
+          <div class="stat"><div class="stat-big">350–400</div><div class="stat-copy">Seats annually for consecutive years as the repeat-production program matured.</div></div>
+          <div class="stat"><div class="stat-big">Staged</div><div class="stat-copy">Production split across teardown/build and cut/sew functions, with task difficulty matched to technician experience.</div></div>
+          <div class="stat"><div class="stat-big">Nationwide</div><div class="stat-copy">Wholesale distribution supported by standardized product options rather than one-to-one custom consultation.</div></div>
+        </div>
+
+        <div class="production-grid">
+          <img src="prod-hide.jpg" alt="Leather hide and pattern layout for production">
+          <img src="prod-workstation.jpg" alt="Motorcycle seat production workstation">
+          <img src="prod-sewing.jpg" alt="Sewing operation for repeat-production motorcycle seats">
+        </div>
+
+        <div class="production-wide">
+          <img src="prod-batch.jpg" alt="Multiple motorcycle seats in repeat production">
+          <img src="prod-variants.jpg" alt="Custom Stitching motorcycle seat product variants">
+        </div>
+
+        <div class="pair">
+          <figure class="landscape"><img src="prod-finished.jpg" alt="Finished repeat-production motorcycle seat"><figcaption class="caption">Parallel stitch spacing became a signature visual standard and required consistent execution across the production team.</figcaption></figure>
+          <figure class="landscape"><img src="prod-shipping.jpg" alt="Completed motorcycle seats prepared for shipment"><figcaption class="caption">The system connected high-quality execution with scheduling, wholesale demand and repeatable delivery.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="philosophy">
+        <div class="philosophy-label">TECHNICAL APPROACH</div>
+        <div class="philosophy-text">Start with the material limitations. Understand the foam and substrate. Control how the soft material moves. Define retention and construction. Then solve for manufacturability, quality, cost and timing.</div>
       </section>
 
       <div class="next">
         <a href="index.html#work">← SELECTED WORK</a>
         <a href="design-to-manufacturing.html">DESIGN TO PRODUCTION →</a>
       </div>
-
     </main>
   </div>
 </body>
