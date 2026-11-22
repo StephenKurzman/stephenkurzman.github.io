@@ -4,86 +4,318 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soft Goods & Physical Product Development | Stephen Kurzman</title>
-  <meta name="description" content="Selected Custom Stitching work by Stephen Kurzman spanning bespoke interiors, soft-goods development, foam, patternmaking, physical prototyping, craftsmanship, and repeatable production.">
+  <meta name="description" content="Selected soft-goods and physical product development work by Stephen Kurzman, spanning pattern development, sewn construction, prototype iteration, complex trimmed surfaces, and repeatable production.">
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: Arial, Helvetica, sans-serif; color: #111; background: #fff; line-height: 1.5; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111;
+      background: #fff;
+      line-height: 1.5;
+    }
     a { color: inherit; text-decoration: none; }
-    img { display: block; width: 100%; }
-    .container { width: min(1280px, 90%); margin: 0 auto; }
-    header { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; border-bottom: 1px solid #ddd; }
+    img { display: block; width: 100%; height: auto; }
+    .shell { width: min(1280px, 90%); margin: 0 auto; }
+    .measure { max-width: 790px; }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 0;
+      border-bottom: 1px solid #ddd;
+    }
     .name { font-size: 20px; font-weight: 700; letter-spacing: .02em; }
     nav { display: flex; gap: 28px; font-size: 13px; letter-spacing: .10em; }
-    nav a:hover { opacity: .55; }
+    nav a:hover, .back:hover, .next a:hover { opacity: .55; }
 
-    .page-head { padding: 72px 0 58px; max-width: 1000px; }
-    .back { display: inline-block; margin-bottom: 46px; font-size: 11px; letter-spacing: .14em; color: #666; }
-    .kicker { font-size: 12px; letter-spacing: .16em; margin-bottom: 18px; }
-    h1 { font-size: clamp(44px, 6.3vw, 80px); line-height: 1.02; font-weight: 600; letter-spacing: -.04em; margin-bottom: 28px; }
-    .intro { max-width: 880px; font-size: clamp(19px, 2vw, 26px); line-height: 1.55; color: #444; }
+    .intro {
+      padding: 70px 0 54px;
+      max-width: 1000px;
+    }
+    .back {
+      display: inline-block;
+      margin-bottom: 48px;
+      font-size: 11px;
+      letter-spacing: .14em;
+      color: #666;
+    }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: .16em;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(44px, 6.4vw, 80px);
+      line-height: 1.02;
+      letter-spacing: -.04em;
+      font-weight: 600;
+      margin-bottom: 28px;
+      max-width: 1050px;
+    }
+    .intro-copy {
+      font-size: clamp(19px, 2vw, 26px);
+      line-height: 1.55;
+      color: #444;
+      max-width: 880px;
+    }
 
-    .hero { margin-bottom: 92px; }
-    .hero img { width: 100%; max-height: 900px; object-fit: cover; }
+    .hero {
+      margin-bottom: 118px;
+    }
+    .hero img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .hero-caption {
+      margin-top: 12px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      color: #777;
+    }
 
-    .project { padding: 96px 0 104px; border-top: 1px solid #ddd; }
-    .project-no { font-size: 11px; letter-spacing: .14em; color: #777; margin-bottom: 18px; }
-    .project-title { max-width: 850px; font-size: clamp(32px, 4vw, 54px); line-height: 1.07; letter-spacing: -.03em; font-weight: 600; }
-    .project-copy { max-width: 760px; margin-top: 24px; font-size: 17px; line-height: 1.75; color: #444; }
+    .story {
+      padding: 18px 0 120px;
+    }
+    .story + .story { padding-top: 20px; }
 
-    .wide { margin-top: 58px; }
-    .wide img { max-height: 900px; object-fit: cover; }
-    .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 34px; align-items: start; }
-    .pair.asym { grid-template-columns: 1.25fr .75fr; }
-    .pair.reverse { grid-template-columns: .78fr 1.22fr; }
-    .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
-    .portrait img { aspect-ratio: 4/5; object-fit: cover; }
-    .square img { aspect-ratio: 1/1; object-fit: cover; }
-    .landscape img { aspect-ratio: 4/3; object-fit: cover; }
-    .caption { margin-top: 11px; font-size: 12px; line-height: 1.55; color: #666; max-width: 620px; }
-    .tech { font-weight: 700; color: #222; }
+    .story-head {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 28px;
+      margin-bottom: 54px;
+      align-items: start;
+    }
+    .story-index {
+      font-size: 11px;
+      letter-spacing: .15em;
+      color: #777;
+      padding-top: 8px;
+    }
+    .story-title {
+      font-size: clamp(31px, 4vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -.03em;
+      font-weight: 600;
+      max-width: 900px;
+    }
+    .story-copy {
+      margin-top: 22px;
+      max-width: 790px;
+      font-size: 17px;
+      line-height: 1.75;
+      color: #444;
+    }
 
-    .interlude { padding: 110px 0; border-top: 1px solid #ddd; }
-    .interlude img { max-height: 920px; object-fit: cover; }
-    .interlude-note { margin-top: 18px; max-width: 780px; font-size: 13px; line-height: 1.6; color: #666; letter-spacing: .01em; }
+    .full { margin-top: 38px; }
+    .full img { max-height: 940px; object-fit: cover; }
 
-    .selected { padding: 98px 0 108px; border-top: 1px solid #ddd; }
-    .selected-head { font-size: 12px; letter-spacing: .16em; margin-bottom: 34px; }
-    .selected-grid { display: grid; grid-template-columns: 1fr .72fr; gap: 22px; }
-    .selected-stack { display: grid; grid-template-rows: 1fr 1fr; gap: 22px; }
-    .selected-grid img { height: 100%; object-fit: cover; }
+    .duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: start;
+      margin-top: 22px;
+    }
+    .duo.asym { grid-template-columns: 1.22fr .78fr; }
+    .duo.reverse { grid-template-columns: .78fr 1.22fr; }
 
-    .production-stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 54px; border-top: 1px solid #ddd; }
-    .stat { padding: 26px 28px 26px 0; border-bottom: 1px solid #ddd; }
-    .stat + .stat { padding-left: 28px; border-left: 1px solid #ddd; }
-    .stat-big { font-size: clamp(28px, 3vw, 42px); letter-spacing: -.025em; margin-bottom: 8px; }
-    .stat-copy { font-size: 14px; line-height: 1.55; color: #555; }
+    .frame img { width: 100%; }
+    .frame.crop-43 img { aspect-ratio: 4 / 3; object-fit: cover; }
+    .frame.crop-45 img { aspect-ratio: 4 / 5; object-fit: cover; }
 
-    .production-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 54px; }
-    .production-grid img { aspect-ratio: 4/3; object-fit: cover; }
-    .production-wide { margin-top: 18px; display: grid; grid-template-columns: 1.3fr .7fr; gap: 18px; }
-    .production-wide img { height: 100%; object-fit: cover; }
+    .caption {
+      margin-top: 11px;
+      max-width: 610px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #666;
+    }
+    .caption strong { color: #222; font-weight: 700; }
 
-    .philosophy { padding: 130px 0 140px; border-top: 1px solid #ddd; }
-    .philosophy-label { font-size: 11px; letter-spacing: .16em; margin-bottom: 34px; }
-    .philosophy-text { max-width: 1050px; font-size: clamp(32px, 4.3vw, 60px); line-height: 1.16; letter-spacing: -.035em; font-weight: 500; }
+    .breath { height: 76px; }
 
-    .next { padding: 54px 0 74px; border-top: 1px solid #ddd; display: flex; justify-content: space-between; gap: 30px; font-size: 12px; letter-spacing: .12em; }
+    .statement {
+      margin: 74px 0 18px;
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(320px, 1.2fr);
+      gap: 80px;
+      align-items: start;
+    }
+    .statement-label {
+      font-size: 11px;
+      letter-spacing: .15em;
+      color: #777;
+      padding-top: 9px;
+    }
+    .statement-text {
+      font-size: clamp(27px, 3.2vw, 44px);
+      line-height: 1.24;
+      letter-spacing: -.025em;
+      max-width: 860px;
+    }
 
-    @media (max-width: 800px) {
+    .rail {
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 22px;
+      margin-top: 22px;
+      align-items: stretch;
+    }
+    .rail-main img { height: 100%; min-height: 560px; object-fit: cover; }
+    .rail-stack { display: grid; gap: 22px; }
+    .rail-stack img { height: 100%; min-height: 269px; object-fit: cover; }
+
+    .process-band {
+      margin: 10px 0 122px;
+      background: #f4f4f2;
+      padding: 84px 0 92px;
+    }
+    .process-head {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 28px;
+      margin-bottom: 44px;
+    }
+    .process-title {
+      font-size: clamp(28px, 3.5vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -.025em;
+      font-weight: 600;
+    }
+    .process-copy {
+      margin-top: 18px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #555;
+      max-width: 720px;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .process-grid img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .production-lead {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 48px;
+      align-items: end;
+      margin-top: 48px;
+    }
+    .production-lead img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .production-note {
+      padding-bottom: 4px;
+      font-size: 17px;
+      line-height: 1.75;
+      color: #444;
+      max-width: 520px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 58px 0 52px;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    .stat { padding: 26px 28px 28px 0; }
+    .stat + .stat {
+      padding-left: 28px;
+      border-left: 1px solid #ddd;
+    }
+    .stat-value {
+      font-size: clamp(28px, 3vw, 42px);
+      letter-spacing: -.025em;
+      margin-bottom: 8px;
+    }
+    .stat-copy {
+      font-size: 14px;
+      line-height: 1.55;
+      color: #555;
+      max-width: 310px;
+    }
+
+    .mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+    .mosaic img { aspect-ratio: 4 / 3; object-fit: cover; }
+    .mosaic .tall img { aspect-ratio: 4 / 5; }
+
+    .philosophy {
+      margin-top: 126px;
+      padding: 118px 0 126px;
+      border-top: 1px solid #ddd;
+    }
+    .philosophy-label {
+      font-size: 11px;
+      letter-spacing: .16em;
+      margin-bottom: 34px;
+    }
+    .philosophy-text {
+      max-width: 1080px;
+      font-size: clamp(31px, 4.4vw, 60px);
+      line-height: 1.16;
+      letter-spacing: -.035em;
+      font-weight: 500;
+    }
+
+    .next {
+      padding: 50px 0 72px;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      font-size: 12px;
+      letter-spacing: .12em;
+    }
+
+    @media (max-width: 840px) {
       header { align-items: flex-start; gap: 24px; }
       nav { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
-      .page-head { padding-top: 52px; }
-      .project { padding: 70px 0 76px; }
-      .pair, .pair.asym, .pair.reverse, .trio, .selected-grid, .production-grid, .production-wide, .production-stats { grid-template-columns: 1fr; }
-      .selected-stack { grid-template-rows: auto; }
-      .stat + .stat { padding-left: 0; border-left: none; }
-      .philosophy { padding: 90px 0 100px; }
+      .intro { padding-top: 52px; }
+      .hero { margin-bottom: 84px; }
+      .story { padding-bottom: 84px; }
+      .story-head, .process-head, .statement {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .duo, .duo.asym, .duo.reverse, .rail, .production-lead,
+      .stats, .mosaic { grid-template-columns: 1fr; }
+      .rail-main img, .rail-stack img { min-height: 0; height: auto; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .stat + .stat {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid #ddd;
+      }
+      .stat { padding: 22px 0; }
+      .process-band { padding: 66px 0 72px; margin-bottom: 90px; }
+      .philosophy { margin-top: 90px; padding: 90px 0 96px; }
+    }
+
+    @media (max-width: 520px) {
+      .shell { width: min(92%, 1280px); }
+      nav { font-size: 11px; }
+      .process-grid { grid-template-columns: 1fr; }
+      .next { flex-direction: column; }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
+  <div class="shell">
     <header>
       <div class="name"><a href="index.html">STEPHEN KURZMAN</a></div>
       <nav>
@@ -95,145 +327,239 @@
     </header>
 
     <main>
-      <section class="page-head">
+      <section class="intro">
         <a class="back" href="index.html#work">← BACK TO SELECTED WORK</a>
-        <div class="kicker">CUSTOM STITCHING CO. · SELECTED BODY OF WORK</div>
-        <h1>Soft Goods & Physical Product Development</h1>
-        <p class="intro">Selected work from a hands-on practice spanning bespoke interiors, seating, materials, foam, pattern development, sewn construction, physical iteration, and repeatable production.</p>
+        <div class="eyebrow">SOFT GOODS · PHYSICAL PRODUCT DEVELOPMENT</div>
+        <h1>Precision begins beneath the surface.</h1>
+        <p class="intro-copy">Selected work spanning pattern development, sewn construction, material behavior, prototype iteration, complex trimmed surfaces, and the transition from one-off craftsmanship to repeatable production.</p>
       </section>
 
-      <div class="hero">
-        <img src="cs-hero-camaro.jpg" alt="Finished Camaro interior by Custom Stitching Co.">
-      </div>
+      <figure class="hero">
+        <img src="sg-rr-hero.jpg" alt="Finished classic Range Rover interior re-trim">
+        <figcaption class="hero-caption">CLASSIC RANGE ROVER · RE-TRIM & PATTERN DEVELOPMENT</figcaption>
+      </figure>
 
-      <section class="project">
-        <div class="project-no">01 · C10</div>
-        <h2 class="project-title">Simple by appearance. Deliberate underneath.</h2>
-        <p class="project-copy">The truck arrived as a bare cab with an open brief for a lighter interior. I selected the materials and developed the seat around both the visual direction and the ergonomic needs of a 6'5&quot; driver, including the foam, bolsters, seam channels, trim and installation. I also developed the carpet and steering-wheel trim to carry the same restrained, 1960s competition-inspired character throughout the cabin.</p>
+      <section class="story">
+        <div class="story-head">
+          <div class="story-index">01 · RANGE ROVER</div>
+          <div>
+            <h2 class="story-title">The best execution can feel original.</h2>
+            <p class="story-copy">This Classic Range Rover was re-trimmed in new materials while preserving the restraint of the original interior. I developed and executed the seat patterns and converted the center console from an exposed molded-plastic component into a cut-and-sewn leather assembly. The objective was not to make the work visually louder, but to make the new construction feel as though it belonged there from the beginning.</p>
+          </div>
+        </div>
 
-        <div class="wide"><img src="c10-open.jpg" alt="Finished C10 interior and seat"></div>
-
-        <div class="pair asym">
-          <figure class="landscape">
-            <img src="c10-early.jpg" alt="C10 interior during development">
-            <figcaption class="caption">The interior began as a largely open canvas, allowing the seating position, proportions and material direction to be developed together.</figcaption>
+        <div class="duo asym">
+          <figure class="frame crop-43">
+            <img src="sg-rr-substrate.jpg" alt="Range Rover original seat foam and substrate">
+            <figcaption class="caption">Original substrate and foam established the hard points for the new trim system.</figcaption>
           </figure>
-          <figure class="portrait">
-            <img src="c10-foam.jpg" alt="C10 seat foam, channels and grommet development">
-            <figcaption class="caption"><span class="tech">Independent retention.</span> Each grommet was retained independently so the insert, foam and trim could move naturally under occupant load rather than being rigidly tied together.</figcaption>
+          <figure class="frame crop-45">
+            <img src="sg-rr-seat.jpg" alt="Finished Range Rover leather seat">
+            <figcaption class="caption"><strong>Pattern tuning.</strong> New material behavior and topstitched welting required seam geometry to be refined so the finished surfaces would lay naturally.</figcaption>
           </figure>
         </div>
 
-        <div class="pair reverse">
-          <figure class="portrait">
-            <img src="c10-detail.jpg" alt="C10 seat development detail">
-            <figcaption class="caption">Foam geometry, seam channels and trim were refined through physical iterations to keep the seat simple visually while preserving support and comfort.</figcaption>
+        <div class="statement">
+          <div class="statement-label">MOLDED PART → SOFT TRIM</div>
+          <div class="statement-text">The center console had never been designed to accommodate seams, material thickness, or cut-and-sew construction.</div>
+        </div>
+
+        <div class="duo">
+          <figure class="frame crop-43">
+            <img src="sg-rr-console-original.jpg" alt="Original molded Range Rover center console">
+          </figure>
+          <figure class="frame crop-43">
+            <img src="sg-rr-console-trim.jpg" alt="Range Rover center console re-developed in leather">
+            <figcaption class="caption">The trim pattern was developed from scratch around an existing hard part with no original allowance for upholstery.</figcaption>
+          </figure>
+        </div>
+
+        <div class="duo reverse">
+          <figure class="frame crop-43">
+            <img src="sg-rr-rear-detail.jpg" alt="Finished Range Rover rear seating detail">
+          </figure>
+          <figure class="frame crop-43">
+            <img src="sg-rr-rear.jpg" alt="Finished Range Rover rear seating">
+          </figure>
+        </div>
+      </section>
+
+      <section class="story">
+        <div class="story-head">
+          <div class="story-index">02 · KINDRED EV 911</div>
+          <div>
+            <h2 class="story-title">Design intent translated directly into physical trim.</h2>
+            <p class="story-copy">After establishing the interior aesthetic direction and gaining executive approval, I personally developed the soft-trim patterns across the prototype vehicle: seating, side and door panels, armrests, dashboard trim, carpet, and headliner. Kindred’s compressed development timelines meant prototype iterations had to be highly concentrated and informative; each physical build needed to move the system materially closer to production.</p>
+          </div>
+        </div>
+
+        <div class="full">
+          <img src="sg-911-interior.jpg" alt="Kindred EV 911 prototype interior">
+        </div>
+
+        <div class="duo asym">
+          <figure class="frame crop-43">
+            <img src="sg-911-seat-dev.jpg" alt="Kindred EV 911 seat trim development">
+            <figcaption class="caption">Prototype pattern and fit development translated approved aesthetic intent into physical seat trim.</figcaption>
+          </figure>
+          <figure class="frame crop-45">
+            <img src="sg-911-seat-final.jpg" alt="Kindred EV 911 finished prototype seat">
+          </figure>
+        </div>
+
+        <div class="statement">
+          <div class="statement-label">STRETCH · STITCH COUNT · ALIGNMENT</div>
+          <div class="statement-text">Simple surfaces leave very little room to hide variation.</div>
+        </div>
+
+        <div class="duo reverse">
+          <figure class="frame crop-43">
+            <img src="sg-911-armrest-seam.jpg" alt="Kindred EV 911 armrest hand-sewn inner seam">
+            <figcaption class="caption"><strong>Armrest development.</strong> Material stretch had to be built into the pattern while preserving the geometry required for a precise inside hand-sewn seam. Patterning, sewing, stitch count, and installation all had to resolve together for the seam to align evenly.</figcaption>
+          </figure>
+          <figure class="frame crop-45">
+            <img src="sg-911-armrest-final.jpg" alt="Completed Kindred EV 911 armrest trim">
+          </figure>
+        </div>
+
+        <div class="breath"></div>
+
+        <div class="rail">
+          <figure class="rail-main">
+            <img src="sg-911-door-final.jpg" alt="Finished Kindred EV 911 door panel">
+          </figure>
+          <div class="rail-stack">
+            <figure>
+              <img src="sg-911-stitch-dev.jpg" alt="Kindred EV 911 stitch and surface development">
+            </figure>
+            <figure>
+              <img src="sg-911-door-dev.jpg" alt="Kindred EV 911 door panel development">
+            </figure>
+          </div>
+        </div>
+        <p class="caption"><strong>Texture through process.</strong> The door panels use layered construction and lamination to create depth without relying on overt decoration—the subtle result is driven by how the materials are built up and resolved.</p>
+
+        <div class="duo asym">
+          <figure class="frame crop-43">
+            <img src="sg-911-dash.jpg" alt="Kindred EV 911 dashboard trim detail">
+            <figcaption class="caption">Trim development continued across highly visible interfaces where seam placement and surface quality directly affect perceived design quality.</figcaption>
           </figure>
           <div></div>
         </div>
 
-        <div class="pair">
-          <figure class="square"><img src="c10-wheel-prep.jpg" alt="C10 steering wheel before final trim"></figure>
-          <figure class="square">
-            <img src="c10-wheel-final.jpg" alt="Finished C10 steering wheel trim">
-            <figcaption class="caption">Houndstooth textile, Alcantara micropiping and a three-piece center stripe carried the interior language into a component where alignment and hand-finishing were especially visible.</figcaption>
+        <div class="statement">
+          <div class="statement-label">FULL-VEHICLE INTEGRATION</div>
+          <div class="statement-text">Soft goods were developed as an interior system, not as isolated trimmed parts.</div>
+        </div>
+
+        <div class="duo">
+          <figure class="frame crop-43">
+            <img src="sg-911-carpet-start.jpg" alt="Kindred EV 911 interior before carpet integration">
+          </figure>
+          <figure class="frame crop-43">
+            <img src="sg-911-carpet-final.jpg" alt="Kindred EV 911 installed carpet and interior trim">
+          </figure>
+        </div>
+      </section>
+
+      <section class="story">
+        <div class="story-head">
+          <div class="story-index">03 · HARLEY-DAVIDSON STREET GLIDE</div>
+          <div>
+            <h2 class="story-title">Complex geometry turned into a controlled material surface.</h2>
+            <p class="story-copy">The front fairing and console were hard motorcycle components never intended to be upholstered. I developed every trim pattern from scratch, breaking the fairing into multiple pieces that had to align precisely across compound geometry. The seat used my production architecture as a base, then added more technical pleating and detailing to carry the same material language through the motorcycle.</p>
+          </div>
+        </div>
+
+        <div class="duo asym">
+          <figure class="frame crop-45">
+            <img src="sg-bike-set.jpg" alt="Custom brown leather Street Glide fairing, console and seat set">
+          </figure>
+          <figure class="frame crop-43">
+            <img src="sg-bike-fairing-dev.jpg" alt="Street Glide fairing multi-piece trim development">
+            <figcaption class="caption"><strong>Multi-piece alignment.</strong> Seam placement and pattern geometry had to resolve across a large compound surface with no original trim architecture.</figcaption>
           </figure>
         </div>
 
-        <div class="wide"><img src="c10-final.jpg" alt="Completed C10 interior"></div>
-      </section>
-
-      <section class="interlude">
-        <img src="galaxy-interlude.jpg" alt="Custom red automotive interior by Custom Stitching Co.">
-        <div class="interlude-note">Selected work — material, color and construction developed as a complete interior language.</div>
-      </section>
-
-      <section class="project">
-        <div class="project-no">02 · BRONCO</div>
-        <h2 class="project-title">Precision through restraint.</h2>
-        <p class="project-copy">The interior was intentionally simple and subtle, with a modern influence that complemented the exterior. Starting from provided seat substrates, I developed the seat trim, steering-wheel trim, grab handles and roll-bar wraps from scratch. With restrained surfaces, pattern accuracy, hand stitching and material transitions became especially visible.</p>
-
-        <div class="wide"><img src="bronco-open.jpg" alt="Finished Bronco interior"></div>
-
-        <div class="pair">
-          <figure class="landscape"><img src="bronco-foam.jpg" alt="Bronco bare seat foam and substrate"><figcaption class="caption">Provided substrates established the hard points; all visible trim construction was developed from scratch.</figcaption></figure>
-          <figure class="landscape"><img src="bronco-pattern.jpg" alt="Bronco plaid seat trim development"><figcaption class="caption">Pattern geometry and material alignment had to remain highly controlled because the restrained design exposed variation immediately.</figcaption></figure>
+        <div class="duo reverse">
+          <figure class="frame crop-43">
+            <img src="sg-bike-fairing-detail.jpg" alt="Brown leather motorcycle fairing seam and edge detail">
+          </figure>
+          <figure class="frame crop-45">
+            <img src="sg-bike-fairing-final.jpg" alt="Finished upholstered Harley-Davidson fairing">
+            <figcaption class="caption">The upholstered fairing became a signature capability that distinguished Custom Stitching’s work within the custom motorcycle market.</figcaption>
+          </figure>
         </div>
 
-        <div class="trio">
-          <figure class="square"><img src="bronco-pocket-pattern.jpg" alt="Bronco seat-pocket pattern development"><figcaption class="caption">Pocket pattern development.</figcaption></figure>
-          <figure class="square"><img src="bronco-pocket-build.jpg" alt="Bronco seat-pocket construction"><figcaption class="caption">Construction and attachment refinement.</figcaption></figure>
-          <figure class="square"><img src="bronco-pocket-final.jpg" alt="Finished Bronco seat pocket with flap"><figcaption class="caption"><span class="tech">Integrated pocket development.</span> The finished flapped pocket remains visually quiet while carrying controlled geometry, attachment placement and hand finishing.</figcaption></figure>
-        </div>
-
-        <div class="pair">
-          <figure class="landscape"><img src="bronco-wheel-before.jpg" alt="Bronco steering wheel before trimming"></figure>
-          <figure class="landscape"><img src="bronco-wheel-final.jpg" alt="Finished Bronco steering wheel trim"><figcaption class="caption">Hand-finished trim carried the same material and construction discipline into the steering wheel.</figcaption></figure>
+        <div class="full">
+          <img src="sg-bike-seat.jpg" alt="Finished brown leather motorcycle seat installed on Harley-Davidson">
         </div>
       </section>
+    </main>
+  </div>
 
-      <section class="selected">
-        <div class="selected-head">SELECTED FINISHED WORK · CAMARO</div>
-        <div class="selected-grid">
-          <img src="camaro-detail-door.jpg" alt="Camaro interior door and material detail">
-          <div class="selected-stack">
-            <img src="camaro-detail-console.jpg" alt="Camaro console, door and stitching detail">
-            <img src="camaro-detail-cabin.jpg" alt="Camaro finished cabin detail">
+  <section class="process-band">
+    <div class="shell">
+      <div class="process-head">
+        <div class="story-index">TECHNICAL INTERLUDE</div>
+        <div>
+          <h2 class="process-title">Precision as the product.</h2>
+          <p class="process-copy">Pattern, stitch geometry, sewing, and final assembly were all developed and executed by me. The visual impact depended on maintaining accuracy through every stage of construction.</p>
+        </div>
+      </div>
+      <div class="process-grid">
+        <img src="sg-process-1.jpg" alt="Custom stitch pattern development">
+        <img src="sg-process-2.jpg" alt="Completed sewn motorcycle seat panels">
+        <img src="sg-process-3.jpg" alt="Stephen Kurzman assembling a custom seat">
+        <img src="sg-process-4.jpg" alt="Finished custom seat with precision stitch pattern">
+      </div>
+    </div>
+  </section>
+
+  <div class="shell">
+    <main>
+      <section class="story">
+        <div class="story-head">
+          <div class="story-index">04 · REPEAT PRODUCTION</div>
+          <div>
+            <h2 class="story-title">Turning craft knowledge into a repeatable system.</h2>
+            <p class="story-copy">As demand grew for the Custom Stitching aesthetic, the challenge shifted from one-off execution to delivering a custom-quality experience at greater volume. I retained a familiar OEM Harley-Davidson seat architecture, developed standardized and material-specific patterns, and built the manufacturing process around consistent execution rather than individual consultation.</p>
           </div>
         </div>
-      </section>
 
-      <section class="project">
-        <div class="project-no">03 · FINAL BIKE</div>
-        <h2 class="project-title">From blank structure to complete vision.</h2>
-        <p class="project-copy">I created the seat substrate, developed the seat geometry in foam by hand, and then refined both the seat and console patterns into the finished trim system. Because the visual concept was mine, the form, rider interface, pattern geometry and material execution were developed together rather than treated as separate styling steps.</p>
-
-        <div class="wide"><img src="bike-form.jpg" alt="Motorcycle seat initial form and foam development"></div>
-
-        <div class="pair">
-          <figure class="landscape"><img src="bike-foam.jpg" alt="Refined motorcycle seat foam shape"><figcaption class="caption"><span class="tech">Form development.</span> The initial foam was shaped by hand to establish proportion, transitions and rider interface before final trim patterns were committed.</figcaption></figure>
-          <figure class="landscape"><img src="bike-pattern.jpg" alt="Motorcycle seat and console pattern development"><figcaption class="caption">Pattern refinement translated the hand-developed form into controlled sewn surfaces across the seat and console.</figcaption></figure>
+        <div class="production-lead">
+          <img src="sg-prod-hide.jpg" alt="Leather hide layout for repeat-production motorcycle seats">
+          <p class="production-note">Patterns, material utilization, cutting, sewing, teardown, build-up, and final quality were treated as connected operations. Work was divided between teardown/build and cut/sew functions, with newer and experienced team members assigned by task complexity. I initially trained each role directly, then developed experienced team members who could help train others.</p>
         </div>
 
-        <div class="pair asym">
-          <figure class="landscape"><img src="bike-transition.jpg" alt="Motorcycle seat finished construction transition"></figure>
-          <figure class="portrait"><img src="bike-detail.jpg" alt="Motorcycle seat pattern continuity detail"><figcaption class="caption"><span class="tech">Pattern continuity.</span> Stitched geometry was refined across separate pieces so alignment remained visually controlled after assembly and material tensioning.</figcaption></figure>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-value">350–400</div>
+            <div class="stat-copy">Seats annually for consecutive years as the repeat-production program matured.</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">Staged</div>
+            <div class="stat-copy">Production separated into trainable operations rather than relying on one craftsperson to complete every seat.</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">Nationwide</div>
+            <div class="stat-copy">Wholesale distribution expanded the product beyond one-off local custom work.</div>
+          </div>
         </div>
 
-        <div class="wide"><img src="bike-final.jpg" alt="Completed custom motorcycle seat and bike"></div>
-      </section>
-
-      <section class="project">
-        <div class="project-no">04 · REPEAT PRODUCTION</div>
-        <h2 class="project-title">Turning craft into a repeatable system.</h2>
-        <p class="project-copy">Demand grew for the Custom Stitching aesthetic without every seat requiring a one-off consultation and development cycle. Using a familiar OEM Harley-Davidson seat architecture as the base, I developed standardized patterns, material-specific pattern variants, construction methods and a staged manufacturing process that preserved the visual identity of the bespoke work while making it trainable and repeatable.</p>
-
-        <div class="production-stats">
-          <div class="stat"><div class="stat-big">350–400</div><div class="stat-copy">Seats annually for consecutive years as the repeat-production program matured.</div></div>
-          <div class="stat"><div class="stat-big">Staged</div><div class="stat-copy">Production split across teardown/build and cut/sew functions, with task difficulty matched to technician experience.</div></div>
-          <div class="stat"><div class="stat-big">Nationwide</div><div class="stat-copy">Wholesale distribution supported by standardized product options rather than one-to-one custom consultation.</div></div>
+        <div class="mosaic">
+          <figure><img src="sg-prod-workstation.jpg" alt="Repeat-production motorcycle seat workstation"></figure>
+          <figure><img src="sg-prod-sewing.jpg" alt="Repeat-production sewing operation"></figure>
+          <figure><img src="sg-prod-finished.jpg" alt="Finished Custom Stitching production seat"></figure>
+          <figure><img src="sg-prod-detail.jpg" alt="Signature parallel stitch spacing detail"></figure>
+          <figure class="tall"><img src="sg-prod-batch.jpg" alt="Multiple Custom Stitching seats in production"></figure>
         </div>
-
-        <div class="production-grid">
-          <img src="prod-hide.jpg" alt="Leather hide and pattern layout for production">
-          <img src="prod-workstation.jpg" alt="Motorcycle seat production workstation">
-          <img src="prod-sewing.jpg" alt="Sewing operation for repeat-production motorcycle seats">
-        </div>
-
-        <div class="production-wide">
-          <img src="prod-batch.jpg" alt="Multiple motorcycle seats in repeat production">
-          <img src="prod-variants.jpg" alt="Custom Stitching motorcycle seat product variants">
-        </div>
-
-        <div class="pair">
-          <figure class="landscape"><img src="prod-finished.jpg" alt="Finished repeat-production motorcycle seat"><figcaption class="caption">Parallel stitch spacing became a signature visual standard and required consistent execution across the production team.</figcaption></figure>
-          <figure class="landscape"><img src="prod-shipping.jpg" alt="Completed motorcycle seats prepared for shipment"><figcaption class="caption">The system connected high-quality execution with scheduling, wholesale demand and repeatable delivery.</figcaption></figure>
-        </div>
+        <p class="caption"><strong>Consistency at the detail level.</strong> Parallel stitch spacing became part of the product’s visual identity and demanded disciplined execution across the production team.</p>
       </section>
 
       <section class="philosophy">
         <div class="philosophy-label">TECHNICAL APPROACH</div>
-        <div class="philosophy-text">Start with the material limitations. Understand the foam and substrate. Control how the soft material moves. Define retention and construction. Then solve for manufacturability, quality, cost and timing.</div>
+        <div class="philosophy-text">Start with the material limitations. Understand the foam and substrate. Control how the soft material moves. Define retention and construction. Then solve for manufacturability, quality, cost, and timing.</div>
       </section>
 
       <div class="next">
