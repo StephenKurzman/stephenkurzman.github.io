@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kindred EV911 Product & Design Leadership | Stephen Kurzman</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #111; background: #fff; line-height: 1.5; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    .container { width: min(1200px, 90%); margin: 0 auto; }
+
+    header { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; border-bottom: 1px solid #ddd; }
+    .name { font-size: 20px; font-weight: 700; letter-spacing: .02em; }
+    nav { display: flex; gap: 28px; font-size: 13px; letter-spacing: .10em; }
+    nav a:hover { opacity: .55; }
+
+    .project-head { padding: 70px 0 48px; }
+    .back { display: inline-block; margin-bottom: 42px; font-size: 11px; letter-spacing: .14em; color: #555; }
+    .kicker { font-size: 12px; letter-spacing: .16em; margin-bottom: 18px; }
+    h1 { max-width: 1080px; font-size: clamp(42px, 6vw, 76px); line-height: 1.03; font-weight: 600; letter-spacing: -.035em; margin-bottom: 28px; }
+    .intro { max-width: 920px; color: #444; font-size: clamp(19px, 2vw, 26px); line-height: 1.5; }
+
+    .hero-image { margin-bottom: 74px; aspect-ratio: 16/9; overflow: hidden; background: #eee; }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+    .meta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; padding: 28px 0 70px; border-top: 1px solid #ddd; }
+    .meta-label { font-size: 10px; letter-spacing: .14em; color: #777; margin-bottom: 7px; }
+    .meta-value { font-size: 15px; line-height: 1.5; }
+
+    .section { padding: 78px 0; border-top: 1px solid #ddd; }
+    .section-label { font-size: 11px; letter-spacing: .16em; margin-bottom: 30px; }
+    .two-col { display: grid; grid-template-columns: .9fr 1.6fr; gap: 80px; align-items: start; }
+    .section h2 { font-size: clamp(30px, 3.2vw, 48px); line-height: 1.08; letter-spacing: -.025em; font-weight: 600; }
+    .body-copy { max-width: 800px; color: #444; font-size: 17px; line-height: 1.75; }
+    .body-copy p + p { margin-top: 18px; }
+
+    .image-full { margin: 54px 0 18px; }
+    .image-full img { max-height: 800px; object-fit: cover; }
+    .caption { font-size: 12px; line-height: 1.55; color: #666; max-width: 900px; }
+
+    .image-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 54px; }
+    .image-pair figure { min-width: 0; }
+    .image-pair img { aspect-ratio: 4/3; height: 100%; object-fit: cover; background: #f3f3f3; }
+    .image-pair .contain { object-fit: contain; }
+    figure figcaption { margin-top: 12px; font-size: 12px; color: #666; line-height: 1.55; }
+
+    .image-trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 54px; }
+    .image-trio img { aspect-ratio: 4/3; height: 100%; object-fit: cover; }
+
+    .artifact-stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 36px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+    .artifact-stat { padding: 25px 22px 28px; border-right: 1px solid #ddd; }
+    .artifact-stat:last-child { border-right: 0; }
+    .artifact-stat strong { display: block; font-size: 25px; font-weight: 600; letter-spacing: -.025em; margin-bottom: 5px; }
+    .artifact-stat span { color: #666; font-size: 12px; line-height: 1.5; }
+
+    .charter-system { margin-top: 54px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+    .charter-row { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .charter-step { padding: 28px 24px 30px; min-height: 176px; border-right: 1px solid #ddd; }
+    .charter-step:last-child { border-right: 0; }
+    .charter-step .num { color: #777; font-size: 10px; letter-spacing: .14em; margin-bottom: 12px; }
+    .charter-step h3 { font-size: 17px; margin-bottom: 10px; }
+    .charter-step p { color: #555; font-size: 14px; line-height: 1.6; }
+
+    .spec-anatomy { margin-top: 50px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #ddd; border-left: 1px solid #ddd; }
+    .spec-cell { min-height: 150px; padding: 24px 25px 26px; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+    .spec-cell .small { font-size: 10px; color: #777; letter-spacing: .13em; margin-bottom: 9px; }
+    .spec-cell h3 { font-size: 17px; margin-bottom: 9px; }
+    .spec-cell p { color: #555; font-size: 13px; line-height: 1.6; }
+
+    .ownership { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 40px; margin-top: 46px; border-top: 1px solid #ddd; }
+    .ownership-card { padding: 26px 0; border-bottom: 1px solid #ddd; }
+    .ownership-card h3 { font-size: 18px; margin-bottom: 10px; }
+    .ownership-card p { color: #555; font-size: 15px; line-height: 1.65; }
+
+    .maturity { margin-top: 48px; padding: 32px; background: #f5f4f1; }
+    .maturity-title { font-size: 15px; font-weight: 700; margin-bottom: 22px; }
+    .maturity-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+    .maturity-step { min-height: 68px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; background: #e8e6e0; font-size: 12px; line-height: 1.3; }
+    .maturity-step.late { background: #dfe4df; }
+
+    .systems-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px 48px; margin-top: 48px; }
+    .system { border-top: 1px solid #ddd; padding-top: 25px; }
+    .system-kicker { font-size: 10px; letter-spacing: .13em; color: #777; margin-bottom: 10px; }
+    .system h3 { font-size: 20px; margin-bottom: 10px; }
+    .system p { color: #555; font-size: 15px; line-height: 1.65; }
+    .token-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 17px; }
+    .token { border: 1px solid #ddd; padding: 6px 8px; font-size: 10px; letter-spacing: .05em; color: #555; background: #fafafa; }
+
+    .interface-map { margin-top: 54px; display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 20px; align-items: stretch; }
+    .interface-col { display: grid; gap: 14px; }
+    .interface-node { border: 1px solid #ddd; padding: 19px 20px; min-height: 72px; display: flex; align-items: center; font-size: 14px; color: #444; }
+    .interface-center { background: #f2f1ed; padding: 34px 30px; display: flex; flex-direction: column; justify-content: center; border: 1px solid #d8d5cf; }
+    .interface-center .small { font-size: 10px; letter-spacing: .13em; color: #777; margin-bottom: 14px; }
+    .interface-center h3 { font-size: 29px; line-height: 1.12; letter-spacing: -.02em; margin-bottom: 16px; }
+    .interface-center p { color: #555; font-size: 14px; line-height: 1.7; }
+
+    .leadership-note { margin-top: 48px; padding: 32px 34px; background: #f5f4f1; }
+    .leadership-note strong { display: block; font-size: 18px; margin-bottom: 12px; }
+    .leadership-note p { color: #555; font-size: 15px; line-height: 1.7; max-width: 900px; }
+
+    .result { max-width: 960px; font-size: clamp(24px, 3vw, 38px); line-height: 1.45; letter-spacing: -.015em; }
+    .closing-line { margin-top: 34px; max-width: 900px; color: #555; font-size: 17px; line-height: 1.75; }
+    .next { padding: 64px 0 76px; border-top: 1px solid #ddd; display: flex; justify-content: space-between; gap: 30px; font-size: 12px; letter-spacing: .12em; }
+
+    @media (max-width: 900px) {
+      .charter-row, .artifact-stats { grid-template-columns: 1fr 1fr; }
+      .charter-step:nth-child(2), .artifact-stat:nth-child(2) { border-right: 0; }
+      .charter-step:nth-child(-n+2), .artifact-stat:nth-child(-n+2) { border-bottom: 1px solid #ddd; }
+      .spec-anatomy { grid-template-columns: 1fr 1fr; }
+      .ownership { grid-template-columns: 1fr; }
+      .maturity-grid { grid-template-columns: repeat(2, 1fr); }
+      .image-trio { grid-template-columns: 1fr; }
+      .interface-map { grid-template-columns: 1fr; }
+      .interface-center { order: -1; }
+    }
+    @media (max-width: 800px) {
+      header { align-items: flex-start; gap: 24px; }
+      nav { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+      .project-head { padding-top: 52px; }
+      .meta-grid { grid-template-columns: repeat(2, 1fr); }
+      .two-col { grid-template-columns: 1fr; gap: 24px; }
+      .image-pair, .systems-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .charter-row, .artifact-stats, .spec-anatomy { grid-template-columns: 1fr; }
+      .charter-step, .artifact-stat { border-right: 0; border-bottom: 1px solid #ddd; }
+      .maturity-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="name"><a href="index.html">STEPHEN KURZMAN</a></div>
+      <nav>
+        <a href="index.html#work">WORK</a>
+        <a href="index.html#expertise">EXPERTISE</a>
+        <a href="index.html#about">ABOUT</a>
+        <a href="#">RESUME</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="project-head">
+        <a class="back" href="index.html#work">← BACK TO SELECTED WORK</a>
+        <div class="kicker">KINDRED MOTORWORKS · PRODUCT &amp; DESIGN LEADERSHIP</div>
+        <h1>EV911 Product Definition &amp; Development System</h1>
+        <p class="intro">As Design Manager, I was responsible for turning preliminary direction into a defined product—and building the systems used to communicate intent, manage maturity, make tradeoffs, and lead the vehicle toward execution.</p>
+      </section>
+
+      <div class="hero-image"><img src="ev911-hero.jpg" alt="Kindred EV911 interior development"></div>
+
+      <section class="meta-grid">
+        <div><div class="meta-label">ROLE</div><div class="meta-value">Design Manager — Interior &amp; Trim</div></div>
+        <div><div class="meta-label">RESPONSIBILITY</div><div class="meta-value">Product definition + cross-functional development</div></div>
+        <div><div class="meta-label">TEAM INTERFACE</div><div class="meta-value">Design · Engineering · Supply Chain · Manufacturing · Suppliers</div></div>
+        <div><div class="meta-label">SYSTEMS</div><div class="meta-value">Charter · CMF · PLM/BOM · Cost · Risk · Readiness</div></div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">01 · FROM PRELIMINARY DIRECTION TO PRODUCT OWNERSHIP</div>
+        <div class="two-col">
+          <h2>Define the product. Create the system that develops it.</h2>
+          <div class="body-copy">
+            <p>The EV911 began with an existing high-level design guide that established customer context, broad vehicle direction, and selected feature goals. As Design Manager, I established the interior design direction, led executive review cycles, defined interior options and customer-facing functionality, and directed Industrial Design and rendering toward an executable product.</p>
+            <p>The responsibility quickly became broader than styling. The program needed a shared definition of what the vehicle was, what mattered to the customer, what Design controlled, where Engineering had flexibility, and how the organization would know when a feature was actually ready.</p>
+          </div>
+        </div>
+
+        <div class="image-pair">
+          <figure>
+            <img class="contain" src="ev911-render-door.jpg" alt="EV911 door panel development rendering">
+            <figcaption>Door-panel development rendering used to clarify product direction before physical validation.</figcaption>
+          </figure>
+          <figure>
+            <img class="contain" src="ev911-render-console.jpg" alt="EV911 center console development rendering">
+            <figcaption>Center-console development integrating modern EV functionality while preserving a restrained, period-appropriate interior language.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">02 · MASTER DESIGN CHARTER</div>
+        <div class="two-col">
+          <h2>Move product knowledge out of conversations and into a controlled system.</h2>
+          <div class="body-copy">
+            <p>I authored Kindred's first high-level Product Charter and developed it into the EV911 Master Design Charter: a controlled framework connecting vehicle expectations to feature-level requirements and a structured Design-to-Engineering handoff.</p>
+            <p>The Charter formalized the product at multiple levels—Brand, Customer, Design, and Performance Expectations first, then detailed Interior, Exterior, and Controls features. Individual requirements could mature without losing their relationship to the vehicle-level intent.</p>
+          </div>
+        </div>
+
+        <div class="image-full"><img src="ev911-charter-overview.jpg" alt="Sanitized EV911 Master Design Charter cover and table of contents"></div>
+        <div class="caption">Sanitized public excerpt. The portfolio shows the Charter's structure and scope while omitting internal program content.</div>
+
+        <div class="artifact-stats">
+          <div class="artifact-stat"><strong>280</strong><span>pages in the controlled Rev 002 master document</span></div>
+          <div class="artifact-stat"><strong>4</strong><span>top-level domains: Expectations · Interior · Exterior · Controls</span></div>
+          <div class="artifact-stat"><strong>Rev controlled</strong><span>document number, change history, approval status, and release structure</span></div>
+          <div class="artifact-stat"><strong>Feature level</strong><span>requirements connect vehicle intent to individual systems and components</span></div>
+        </div>
+
+        <div class="charter-system">
+          <div class="charter-row">
+            <div class="charter-step"><div class="num">01 · EXPECTATIONS</div><h3>Define the product</h3><p>Brand · Customer · Design · Performance expectations establish the decision framework.</p></div>
+            <div class="charter-step"><div class="num">02 · FEATURES</div><h3>Translate intent</h3><p>Vehicle-level direction becomes individual system and feature specifications.</p></div>
+            <div class="charter-step"><div class="num">03 · REQUIREMENTS</div><h3>Clarify execution</h3><p>Material, fit, function, aesthetic intent, maturity, interfaces, and flexibility are made explicit.</p></div>
+            <div class="charter-step"><div class="num">04 · ACCEPTANCE</div><h3>Close the loop</h3><p>Acceptance criteria establish what must be true before the customer-facing condition is considered resolved.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">03 · HOW I COMMUNICATE DESIGN INTENT</div>
+        <div class="two-col">
+          <h2>Make the requirement specific without prescribing every solution.</h2>
+          <div class="body-copy">
+            <p>The feature-specification structure became a repeatable way to communicate across disciplines. Each feature starts with the change objective and maturity, then defines the intent from multiple angles so teams can understand both the desired result and the constraints around it.</p>
+            <p>This reduces ambiguity without turning Design into Engineering. The requirement should make clear what must be preserved, what can change, who owns the implementation, and how success will be judged.</p>
+          </div>
+        </div>
+
+        <div class="spec-anatomy">
+          <div class="spec-cell"><div class="small">01</div><h3>Change Objective</h3><p>Why the feature is changing and what problem the new direction must solve.</p></div>
+          <div class="spec-cell"><div class="small">02</div><h3>Design Maturity</h3><p>Conceptual direction, defined intent with flexible execution, or highly defined with limited flexibility.</p></div>
+          <div class="spec-cell"><div class="small">03</div><h3>Design Intent</h3><p>The customer-facing purpose, character, and relationship to the broader vehicle experience.</p></div>
+          <div class="spec-cell"><div class="small">04</div><h3>Material Intent</h3><p>Material character, quality expectations, compatibility, durability, and relationship to vehicle CMF.</p></div>
+          <div class="spec-cell"><div class="small">05</div><h3>Fit / Dimensional Intent</h3><p>Packaging, interfaces, alignment, clearances, gap / flush, and visible geometry expectations.</p></div>
+          <div class="spec-cell"><div class="small">06</div><h3>Function / Performance</h3><p>Customer operation, reliability, ergonomics, integration, serviceability, and technical behavior.</p></div>
+          <div class="spec-cell"><div class="small">07</div><h3>Aesthetic Intent</h3><p>What the feature should communicate visually and what would make the execution feel wrong.</p></div>
+          <div class="spec-cell"><div class="small">08</div><h3>Special Considerations</h3><p>Known technical, supplier, process, packaging, safety, or future-development constraints.</p></div>
+          <div class="spec-cell"><div class="small">09</div><h3>Acceptance Criteria</h3><p>Measurable or observable conditions used to review and release the customer-facing result.</p></div>
+        </div>
+
+        <div class="ownership">
+          <div class="ownership-card"><h3>Design Controls</h3><p>A-surfaces, visible geometry, CMF, product character, customer touchpoints, fit/finish intent, and perceived quality.</p></div>
+          <div class="ownership-card"><h3>Engineering Controls</h3><p>Construction, packaging, retention, B-side architecture, technical implementation, and manufacturing methodology.</p></div>
+          <div class="ownership-card"><h3>Shared Closure</h3><p>Interfaces, prototypes, tradeoffs, technical feasibility, acceptance criteria, and final review of the customer-facing condition.</p></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">04 · DEVELOPMENT OPERATING SYSTEM</div>
+        <div class="two-col">
+          <h2>Create visibility around maturity, risk, cost, contingencies, and decisions.</h2>
+          <div class="body-copy">
+            <p>Alongside the Charter, I created practical tools for managing how the product matured: interior readiness tracking, critical-path and contingency planning, seat down-selection, design cost reduction, made-to-spec costing, assembly dependencies, and blocker ownership.</p>
+            <p>The goal was not process for its own sake. Each tool answered a specific management question: What is ready? What is blocked? What decision is needed? What happens if the preferred path misses its date? What is the cost implication? Who owns the next move?</p>
+          </div>
+        </div>
+
+        <div class="maturity">
+          <div class="maturity-title">INTERIOR DEVELOPMENT MATURITY</div>
+          <div class="maturity-grid">
+            <div class="maturity-step">Concept</div>
+            <div class="maturity-step">Development</div>
+            <div class="maturity-step">Prototype</div>
+            <div class="maturity-step">Validation</div>
+            <div class="maturity-step late">Freeze Ready</div>
+            <div class="maturity-step late">Frozen</div>
+            <div class="maturity-step late">Production Intent</div>
+          </div>
+        </div>
+
+        <div class="systems-grid">
+          <div class="system">
+            <div class="system-kicker">PROGRAM CONTROL</div>
+            <h3>Critical Path + Contingencies</h3>
+            <p>Use trigger dates and pre-defined Plan B ownership to prevent a show-car deadline from silently derailing the production-intent path.</p>
+            <div class="token-row"><span class="token">Milestone</span><span class="token">Risk</span><span class="token">Trigger Date</span><span class="token">Contingency Status</span><span class="token">Plan B Owner</span><span class="token">Plan B Summary</span></div>
+          </div>
+          <div class="system">
+            <div class="system-kicker">DECISION QUALITY</div>
+            <h3>Seat Down-Selection</h3>
+            <p>Evaluate candidates against the full program—not preference alone—so comfort, design, packaging, supplier capability, timing, cost, and production work are visible together.</p>
+            <div class="token-row"><span class="token">Comfort</span><span class="token">Bolster Risk</span><span class="token">Aesthetic</span><span class="token">Packaging</span><span class="token">Supplier Trim</span><span class="token">Cost</span><span class="token">Lead Time</span><span class="token">Work to Production</span></div>
+          </div>
+          <div class="system">
+            <div class="system-kicker">PRODUCT MATURITY</div>
+            <h3>Part-Level Readiness + Blockers</h3>
+            <p>Separate maturity from schedule and make the remaining steps to Design Freeze and Production Intent explicit at the component level.</p>
+            <div class="token-row"><span class="token">Intent</span><span class="token">Geometry</span><span class="token">CMF</span><span class="token">Prototype</span><span class="token">Validation</span><span class="token">Freeze Readiness</span><span class="token">Blocker Owner</span><span class="token">Next Step</span></div>
+          </div>
+          <div class="system">
+            <div class="system-kicker">COST + BOM</div>
+            <h3>Design Cost Reduction + MTS Costing</h3>
+            <p>Treat cost as part of product development: make OTS / MTS choices, part removal, simplification, sourcing changes, and vehicle-level cost implications visible while the design is still evolving.</p>
+            <div class="token-row"><span class="token">OTS / MTS</span><span class="token">Part Removal</span><span class="token">Simplification</span><span class="token">Supplier / Source</span><span class="token">Cost / Vehicle</span><span class="token">BOM Impact</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">05 · CROSS-FUNCTIONAL LEADERSHIP</div>
+        <div class="two-col">
+          <h2>Lead through clarity, ownership, and technical judgment.</h2>
+          <div class="body-copy">
+            <p>The Design Manager role sat at the intersection of multiple disciplines. I directed Industrial Design and coordinated development with Mechanical Engineering, Electrical Engineering, Controls, Supply Chain, Production, Upholstery, Fabrication, Paint/Body, General Assembly, rendering resources, external suppliers, and executive stakeholders.</p>
+            <p>My role was not to own every technical solution personally. It was to keep the product intent coherent, surface risk early, make tradeoffs visible, assign ownership, and bring the right disciplines together to close the problem.</p>
+          </div>
+        </div>
+
+        <div class="interface-map">
+          <div class="interface-col">
+            <div class="interface-node">Industrial Design + Rendering</div>
+            <div class="interface-node">Mechanical Engineering</div>
+            <div class="interface-node">Electrical + Controls</div>
+            <div class="interface-node">Supply Chain + Suppliers</div>
+          </div>
+          <div class="interface-center">
+            <div class="small">DESIGN MANAGER</div>
+            <h3>Product intent stays coherent while ownership stays distributed.</h3>
+            <p>Requirements · reviews · tradeoffs · priorities · blockers · maturity · cost · risk · physical validation</p>
+          </div>
+          <div class="interface-col">
+            <div class="interface-node">Production + General Assembly</div>
+            <div class="interface-node">Upholstery + Fabrication</div>
+            <div class="interface-node">Paint / Body + CMF Execution</div>
+            <div class="interface-node">Executive + Customer / Marketing Context</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">06 · FROM SYSTEM TO PHYSICAL PRODUCT</div>
+        <div class="two-col">
+          <h2>Stay close to the product while leading the system around it.</h2>
+          <div class="body-copy">
+            <p>I remained directly involved in physical development throughout the program. Requirements informed prototypes, prototypes exposed risk, and the resulting decisions flowed back into the controlled product definition.</p>
+            <p>That connection matters. Product leadership is strongest when the person defining the intent can also recognize what is happening in the real material, part, interface, supplier process, or vehicle—and communicate the consequence back to the team.</p>
+          </div>
+        </div>
+
+        <div class="image-trio">
+          <figure><img src="ev911-door-final.jpg" alt="EV911 door panel physical development"><figcaption>Door-panel architecture integrating the armrest, controls, speakers, materials, and trim intent.</figcaption></figure>
+          <figure><img src="ev911-dash.jpg" alt="EV911 dashboard physical development"><figcaption>Dashboard development balancing A-surface quality, upholstery, controls, fit / flush, and subsystem integration.</figcaption></figure>
+          <figure><img src="ev911-seat-final.jpg" alt="EV911 seating development"><figcaption>Seating integrated through product down-selection, packaging, trim intent, supplier path, and vehicle-level validation.</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">07 · SCALE THE LEARNING</div>
+        <div class="two-col">
+          <h2>Turn specialist knowledge into shared organizational capability.</h2>
+          <div class="body-copy">
+            <p>Beyond EV911-specific documentation, I created a Trim Feasibility &amp; Upholstery Strategy Guide to give Design, Engineering, Surface Development, Vehicle Development, Supply Chain, and Upholstery a shared framework for evaluating soft-trim feasibility earlier in development.</p>
+            <p>The guide formalizes material behavior, surface risk, foam / lamination stacks, seam strategy, prototype validation, and engineering release gates—converting specialist knowledge into a process other disciplines can use.</p>
+          </div>
+        </div>
+
+        <div class="leadership-note">
+          <strong>The broader leadership pattern</strong>
+          <p>Define the intent clearly. Make ownership visible. Give each discipline appropriate freedom. Track maturity and risk. Validate physically. Capture the learning in a system that makes the next decision easier.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-label">08 · OUTCOME</div>
+        <div class="result">The EV911 progressed from preliminary direction into a substantially defined product supported by controlled requirements, clearer cross-functional ownership, visible development maturity, cost and contingency tools, and an increasingly repeatable path from Design into Engineering and physical execution.</div>
+        <p class="closing-line">The vehicle is the visible result. The deeper contribution is the product-development structure created around it—and the ability to communicate, develop, and lead across the disciplines required to make a complex physical product real.</p>
+        <div class="image-full"><img src="ev911-carpet-final.jpg" alt="EV911 interior physical development"></div>
+      </section>
+
+      <div class="next">
+        <a href="index.html#work">← SELECTED WORK</a>
+        <a href="index.html">HOME →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
