@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stephen Kurzman | Product Development, Soft Goods & Manufacturing</title>
+  <meta name="description" content="Stephen Kurzman — product development leader with 20+ years of experience spanning soft goods, physical prototyping, design, suppliers, manufacturing, and production readiness.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #111; background: #fff; line-height: 1.5; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    .container { width: min(1200px, 90%); margin: 0 auto; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; border-bottom: 1px solid #ddd; }
+    .name { font-size: 20px; font-weight: 700; letter-spacing: .02em; }
+    nav { display: flex; gap: 28px; font-size: 13px; letter-spacing: .10em; }
+    nav a:hover { opacity: .55; }
+    .hero { padding: 88px 0 78px; max-width: 980px; }
+    .eyebrow { font-size: 13px; letter-spacing: .15em; margin-bottom: 24px; }
+    h1 { font-size: clamp(46px, 6.2vw, 78px); line-height: 1.04; font-weight: 600; letter-spacing: -.035em; margin-bottom: 30px; }
+    .hero p { font-size: clamp(19px, 1.8vw, 26px); max-width: 850px; color: #444; line-height: 1.55; }
+    .section { padding: 88px 0; border-top: 1px solid #ddd; }
+    .section-label { font-size: 12px; letter-spacing: .16em; margin-bottom: 44px; }
+    .section-intro { max-width: 800px; font-size: clamp(22px, 2.4vw, 31px); line-height: 1.5; letter-spacing: -.015em; margin-bottom: 54px; }
+    .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 40px; row-gap: 88px; }
+    .project-card a { display: block; }
+    .project-visual { aspect-ratio: 16/10; margin-bottom: 22px; overflow: hidden; background: #eee; }
+    .project-visual img { height: 100%; object-fit: cover; transition: transform .35s ease; }
+    .project-card a:hover .project-visual img { transform: scale(1.015); }
+    .editorial-visual { height: 100%; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; background: #f1f1f1; }
+    .editorial-number { font-size: clamp(46px, 6vw, 72px); line-height: 1; font-weight: 600; letter-spacing: -.04em; color: #d1d1d1; }
+    .editorial-words { max-width: 390px; font-size: clamp(18px, 2vw, 26px); line-height: 1.25; letter-spacing: -.02em; color: #4a4a4a; }
+    .project-number { font-size: 11px; color: #777; margin-bottom: 10px; letter-spacing: .08em; }
+    .project-title { font-size: clamp(22px, 2vw, 29px); line-height: 1.15; font-weight: 600; letter-spacing: -.02em; margin-bottom: 10px; }
+    .project-meta { color: #666; font-size: 14px; line-height: 1.5; }
+    .project-description { margin-top: 18px; max-width: 530px; font-size: 15px; line-height: 1.65; color: #555; }
+    .project-link, .project-status { margin-top: 20px; padding-top: 14px; border-top: 1px solid #e4e4e4; font-size: 11px; letter-spacing: .14em; }
+    .project-status { color: #888; }
+    .project-card a:hover .project-link { opacity: .55; }
+    .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 54px; }
+    .expertise-item { border-top: 1px solid #d9d9d9; padding-top: 20px; }
+    .expertise-item h3 { font-size: 20px; margin-bottom: 12px; letter-spacing: -.01em; }
+    .expertise-item p { color: #555; max-width: 330px; font-size: 15px; line-height: 1.65; }
+    .experience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
+    .experience-item { padding-top: 20px; border-top: 1px solid #d9d9d9; }
+    .experience-company { font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+    .experience-role { font-size: 14px; color: #555; margin-bottom: 14px; }
+    .experience-item p { font-size: 15px; line-height: 1.65; color: #555; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 70px; align-items: start; }
+    .about-heading { font-size: clamp(30px, 3.2vw, 48px); line-height: 1.1; letter-spacing: -.025em; font-weight: 600; }
+    .about-copy { font-size: 17px; line-height: 1.75; color: #444; max-width: 760px; }
+    .about-copy p + p { margin-top: 20px; }
+    footer { padding: 44px 0; border-top: 1px solid #ddd; display: flex; justify-content: space-between; gap: 20px; font-size: 13px; color: #555; }
+    @media (max-width: 800px) {
+      header { align-items: flex-start; gap: 24px; }
+      nav { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+      .hero { padding: 68px 0 58px; }
+      .section { padding: 68px 0; }
+      .work-grid, .expertise-grid, .experience-grid, .about-grid { grid-template-columns: 1fr; }
+      .work-grid { row-gap: 68px; }
+      .expertise-grid, .experience-grid { gap: 38px; }
+      .about-grid { gap: 28px; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="name">STEPHEN KURZMAN</div>
+      <nav>
+        <a href="#work">WORK</a>
+        <a href="#expertise">EXPERTISE</a>
+        <a href="#experience">EXPERIENCE</a>
+        <a href="#about">ABOUT</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow">PRODUCT DEVELOPMENT · SOFT GOODS · MANUFACTURING</div>
+        <h1>Turning design intent into manufacturable products.</h1>
+        <p>Product development leader with 20+ years of experience bridging soft materials, physical prototyping, design, engineering, suppliers, and manufacturing from early concept through production readiness.</p>
+      </section>
+
+      <section class="section" id="work">
+        <div class="section-label">SELECTED WORK</div>
+        <div class="section-intro">Work spanning deep soft-goods development, physical product execution, supplier and manufacturing readiness, and cross-functional product leadership.</div>
+
+        <div class="work-grid">
+          <article class="project-card">
+            <a href="soft-goods.html">
+              <div class="project-visual"><img src="cs-hero-camaro.jpg" alt="Finished high-end automotive interior by Custom Stitching Co."></div>
+              <div class="project-number">01</div>
+              <div class="project-title">Soft Goods & Physical Product Development</div>
+              <div class="project-meta">Materials · Patterning · Construction · Prototyping</div>
+              <p class="project-description">A selected body of work spanning bespoke interiors, seating, material development, patternmaking, physical prototyping, and repeatable production.</p>
+              <div class="project-link">VIEW BODY OF WORK →</div>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <a href="design-to-manufacturing.html">
+              <div class="project-visual"><img src="kindred-vw-bus-hero.jpg" alt="Kindred EV VW Bus design-to-production development"></div>
+              <div class="project-number">02</div>
+              <div class="project-title">Design to Production</div>
+              <div class="project-meta">Product Architecture · DFM · Prototyping · Production Readiness</div>
+              <p class="project-description">Translating a one-off vehicle interior concept into a documented, supplier-ready system designed for repeatable low-volume production.</p>
+              <div class="project-link">VIEW CASE STUDY →</div>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <a href="supplier-manufacturing.html">
+              <div class="project-visual"><img src="cobra-hero.jpg" alt="Cobra seating supplier and manufacturing development"></div>
+              <div class="project-number">03</div>
+              <div class="project-title">Supplier & Manufacturing Development</div>
+              <div class="project-meta">Supplier Development · Quality · Process · Industrialization</div>
+              <p class="project-description">Developing suppliers, manufacturing processes, quality expectations, and technical solutions that move physical products from prototype variability toward repeatable production.</p>
+              <div class="project-link">VIEW CASE STUDY →</div>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual">
+              <div class="editorial-visual">
+                <div class="editorial-number">04</div>
+                <div class="editorial-words">Product Definition · CMF · PLM · Prototypes · Cross-Functional Leadership</div>
+              </div>
+            </div>
+            <div class="project-number">04</div>
+            <div class="project-title">Product & Design Leadership</div>
+            <div class="project-meta">Product Definition · Systems · Documentation · Execution</div>
+            <p class="project-description">Creating structure around complex product development through design direction, product definition, controlled documentation, rapid prototyping, and cross-functional execution.</p>
+            <div class="project-status">CASE STUDY IN DEVELOPMENT</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="expertise">
+        <div class="section-label">EXPERTISE</div>
+        <div class="expertise-grid">
+          <div class="expertise-item"><h3>Soft Materials & Construction</h3><p>Sewn construction, pattern development, material behavior, foam systems, substrates, retention strategies, surface quality, and craftsmanship.</p></div>
+          <div class="expertise-item"><h3>Prototype & Product Development</h3><p>Hands-on physical development, iterative prototyping, fit evaluation, technical problem solving, and design-intent validation.</p></div>
+          <div class="expertise-item"><h3>DFM & Manufacturing Readiness</h3><p>Translating concepts into repeatable processes, controlled parts, manufacturable construction, quality requirements, and production-ready solutions.</p></div>
+          <div class="expertise-item"><h3>Supplier Development</h3><p>Technical supplier collaboration, onsite problem solving, quality expectations, process refinement, first-article development, and launch support.</p></div>
+          <div class="expertise-item"><h3>Product Definition & Documentation</h3><p>BOMs, PLM, specifications, feature requirements, change control, CMF definition, quality documentation, and Design-to-Engineering handoff.</p></div>
+          <div class="expertise-item"><h3>Technical & Team Leadership</h3><p>Leading designers, technicians, suppliers, and cross-functional teams through evidence-based decisions, clear ownership, and hands-on technical engagement.</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="section-label">CAREER CONTEXT</div>
+        <div class="section-intro">A career built from the material and process level upward into engineering-scale development, supplier execution, and product leadership.</div>
+        <div class="experience-grid">
+          <div class="experience-item"><div class="experience-company">Custom Stitching Co.</div><div class="experience-role">Founder / Product & Manufacturing Lead</div><p>Built deep expertise in materials, patternmaking, sewing construction, bespoke product development, repeatable production processes, team training, and nationwide wholesale execution.</p></div>
+          <div class="experience-item"><div class="experience-company">Tesla</div><div class="experience-role">Seating Engineering · Contract Assignment</div><p>Supported hands-on seating and soft-trim development, engineering changes, prototype construction, material evaluation, supplier activity, and production-readiness work at OEM scale.</p></div>
+          <div class="experience-item"><div class="experience-company">Kindred Motorworks</div><div class="experience-role">Design Manager · Former Upholstery Program Manager</div><p>Expanded from upholstery program leadership into full vehicle design and product-development ownership spanning CMF, interiors, suppliers, documentation, prototypes, and cross-functional execution.</p></div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="section-label">ABOUT</div>
+        <div class="about-grid">
+          <div class="about-heading">Technical depth grounded in physical product development.</div>
+          <div class="about-copy">
+            <p>My career began with hands-on mastery of soft materials, pattern development, sewing construction, foam, substrates, and the physical details that determine whether a product looks right, feels right, and can actually be built.</p>
+            <p>That foundation has grown into broader product-development leadership across design, engineering, manufacturing, suppliers, quality, and production systems. I remain most effective where technical judgment, physical development, and cross-functional execution need to come together.</p>
+            <p>Automotive has been the primary environment in which I developed that discipline, but the underlying capabilities apply broadly to complex physical products where materials, human interaction, manufacturing, and design intent intersect.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer><div>Stephen Kurzman</div><div>San Francisco Bay Area</div></footer>
+  </div>
+</body>
+</html>
