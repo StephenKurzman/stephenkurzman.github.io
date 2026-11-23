@@ -30,11 +30,11 @@
     .meta-label { font-size: 10px; letter-spacing: .14em; color: #777; margin-bottom: 7px; }
     .meta-value { font-size: 15px; line-height: 1.5; }
 
-    .section { padding: 78px 0; border-top: 1px solid #ddd; }
+    .section { padding: 68px 0; border-top: 1px solid #ddd; }
     .section-label { font-size: 11px; letter-spacing: .16em; margin-bottom: 30px; }
     .two-col { display: grid; grid-template-columns: .9fr 1.6fr; gap: 80px; align-items: start; }
     .section h2 { font-size: clamp(30px, 3.2vw, 48px); line-height: 1.08; letter-spacing: -.025em; font-weight: 600; }
-    .body-copy { max-width: 800px; color: #444; font-size: 17px; line-height: 1.75; }
+    .body-copy { max-width: 800px; color: #444; font-size: 16px; line-height: 1.7; }
     .body-copy p + p { margin-top: 18px; }
 
     .image-full { margin: 54px 0 18px; }
@@ -97,6 +97,14 @@
     .interface-center h3 { font-size: 29px; line-height: 1.12; letter-spacing: -.02em; margin-bottom: 16px; }
     .interface-center p { color: #555; font-size: 14px; line-height: 1.7; }
 
+    .translation-grid { margin-top: 50px; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #ddd; border-left: 1px solid #ddd; }
+    .translation-head { padding: 14px 20px; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; font-size: 10px; letter-spacing: .14em; color: #777; background: #f7f6f3; }
+    .translation-left, .translation-right { min-height: 92px; padding: 18px 20px; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; justify-content: center; }
+    .translation-left { background: #fbfbfa; }
+    .translation-right { background: #f2f4f1; }
+    .translation-left strong, .translation-right strong { font-size: 15px; margin-bottom: 5px; }
+    .translation-left span, .translation-right span { color: #666; font-size: 12px; line-height: 1.45; }
+
     .leadership-note { margin-top: 48px; padding: 32px 34px; background: #f5f4f1; }
     .leadership-note strong { display: block; font-size: 18px; margin-bottom: 12px; }
     .leadership-note p { color: #555; font-size: 15px; line-height: 1.7; max-width: 900px; }
@@ -115,6 +123,7 @@
       .image-trio { grid-template-columns: 1fr; }
       .interface-map { grid-template-columns: 1fr; }
       .interface-center { order: -1; }
+      .translation-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 800px) {
       header { align-items: flex-start; gap: 24px; }
@@ -163,10 +172,10 @@
       <section class="section">
         <div class="section-label">01 · FROM PRELIMINARY DIRECTION TO PRODUCT OWNERSHIP</div>
         <div class="two-col">
-          <h2>Define the product. Create the system that develops it.</h2>
+          <h2>Own the full path from product definition through execution.</h2>
           <div class="body-copy">
-            <p>The EV911 began with an existing high-level design guide that established customer context, broad vehicle direction, and selected feature goals. As Design Manager, I established the interior design direction, led executive review cycles, defined interior options and customer-facing functionality, and directed Industrial Design and rendering toward an executable product.</p>
-            <p>The responsibility quickly became broader than styling. The program needed a shared definition of what the vehicle was, what mattered to the customer, what Design controlled, where Engineering had flexibility, and how the organization would know when a feature was actually ready.</p>
+            <p>As Design Manager, I own the EV911 interior as a complete product system: product and CMF direction, customer-facing features, Industrial Design guidance, controlled documentation, Design BOM and PLM structure, cost, maturity, program risk, and cross-functional execution.</p>
+            <p>I stay close to the physical product so those decisions remain grounded in material behavior, manufacturability, fit and finish, timing, and build reality. Charters, feature specifications, decision matrices, trackers, critical paths and reviews keep intent, ownership, risk and next actions visible while giving each discipline room to execute.</p>
           </div>
         </div>
 
@@ -187,8 +196,8 @@
         <div class="two-col">
           <h2>Move product knowledge out of conversations and into a controlled system.</h2>
           <div class="body-copy">
-            <p>I authored Kindred's first high-level Product Charter and developed it into the EV911 Master Design Charter: a controlled framework connecting vehicle expectations to feature-level requirements and a structured Design-to-Engineering handoff.</p>
-            <p>The Charter formalized the product at multiple levels—Brand, Customer, Design, and Performance Expectations first, then detailed Interior, Exterior, and Controls features. Individual requirements could mature without losing their relationship to the vehicle-level intent.</p>
+            <p>I authored Kindred's first high-level Product Charter and developed it into the EV911 Master Design Charter—a controlled framework connecting vehicle expectations, feature requirements, and the Design-to-Engineering handoff.</p>
+            <p>Brand, Customer, Design and Performance Expectations establish the top-level intent; Interior, Exterior and Controls features carry that intent into executable requirements.</p>
           </div>
         </div>
 
@@ -217,8 +226,8 @@
         <div class="two-col">
           <h2>Make the requirement specific without prescribing every solution.</h2>
           <div class="body-copy">
-            <p>The feature-specification structure became a repeatable way to communicate across disciplines. Each feature starts with the change objective and maturity, then defines the intent from multiple angles so teams can understand both the desired result and the constraints around it.</p>
-            <p>This reduces ambiguity without turning Design into Engineering. The requirement should make clear what must be preserved, what can change, who owns the implementation, and how success will be judged.</p>
+            <p>The feature-specification structure became a repeatable way to communicate across disciplines. Each feature defines the objective, maturity, constraints and acceptance criteria so teams understand both the desired result and the freedom they have to achieve it.</p>
+            <p>The goal is clarity without over-prescription: what must be preserved, what can change, who owns the implementation, and how success will be judged.</p>
           </div>
         </div>
 
@@ -246,8 +255,8 @@
         <div class="two-col">
           <h2>Create visibility around maturity, risk, cost, contingencies, and decisions.</h2>
           <div class="body-copy">
-            <p>Alongside the Charter, I created practical tools for managing how the product matured: interior readiness tracking, critical-path and contingency planning, seat down-selection, design cost reduction, made-to-spec costing, assembly dependencies, and blocker ownership.</p>
-            <p>The goal was not process for its own sake. Each tool answered a specific management question: What is ready? What is blocked? What decision is needed? What happens if the preferred path misses its date? What is the cost implication? Who owns the next move?</p>
+            <p>Alongside the Charter, I created practical tools for interior readiness, critical-path and contingency planning, seat down-selection, design cost reduction, made-to-spec costing, assembly dependencies, and blocker ownership.</p>
+            <p>Each tool answers a management question: What is ready? What is blocked? What decision is needed? What happens if the preferred path misses its date? What is the cost implication? Who owns the next move?</p>
           </div>
         </div>
 
@@ -295,10 +304,10 @@
       <section class="section">
         <div class="section-label">05 · CROSS-FUNCTIONAL LEADERSHIP</div>
         <div class="two-col">
-          <h2>Lead through clarity, ownership, and technical judgment.</h2>
+          <h2>Align people, technical judgment, and execution.</h2>
           <div class="body-copy">
-            <p>The Design Manager role sat at the intersection of multiple disciplines. I directed Industrial Design and coordinated development with Mechanical Engineering, Electrical Engineering, Controls, Supply Chain, Production, Upholstery, Fabrication, Paint/Body, General Assembly, rendering resources, external suppliers, and executive stakeholders.</p>
-            <p>My role was not to own every technical solution personally. It was to keep the product intent coherent, surface risk early, make tradeoffs visible, assign ownership, and bring the right disciplines together to close the problem.</p>
+            <p>My leadership approach is hands-on and evidence-led. I direct Industrial Design while working across Mechanical Engineering, Electrical Engineering, Controls, Supply Chain, Production, Upholstery, Fabrication, Paint/Body, General Assembly, suppliers, and executive stakeholders. I translate program needs into clear requirements, priorities, owners, risks, and next actions.</p>
+            <p>I stay closest to the areas where technical judgment most affects the finished product—materials, foam, soft trim, retention, manufacturability, fit and finish, supplier capability, cost, and timing. When tradeoffs emerge, I use prototypes, data, annotated visuals, controlled documentation, and direct discussion to make consequences visible and drive closure.</p>
           </div>
         </div>
 
@@ -329,7 +338,7 @@
           <h2>Stay close to the product while leading the system around it.</h2>
           <div class="body-copy">
             <p>I remained directly involved in physical development throughout the program. Requirements informed prototypes, prototypes exposed risk, and the resulting decisions flowed back into the controlled product definition.</p>
-            <p>That connection matters. Product leadership is strongest when the person defining the intent can also recognize what is happening in the real material, part, interface, supplier process, or vehicle—and communicate the consequence back to the team.</p>
+            <p>That connection keeps product leadership grounded in the real material, part, interface, supplier process, and vehicle—not only the nominal design.</p>
           </div>
         </div>
 
@@ -341,19 +350,46 @@
       </section>
 
       <section class="section">
-        <div class="section-label">07 · SCALE THE LEARNING</div>
+        <div class="section-label">07 · SOFT-GOODS BEHAVIOR AS AN ENGINEERING INPUT</div>
         <div class="two-col">
-          <h2>Turn specialist knowledge into shared organizational capability.</h2>
+          <h2>Make soft-goods behavior legible to engineering.</h2>
           <div class="body-copy">
-            <p>Beyond EV911-specific documentation, I created a Trim Feasibility &amp; Upholstery Strategy Guide to give Design, Engineering, Surface Development, Vehicle Development, Supply Chain, and Upholstery a shared framework for evaluating soft-trim feasibility earlier in development.</p>
-            <p>The guide formalizes material behavior, surface risk, foam / lamination stacks, seam strategy, prototype validation, and engineering release gates—converting specialist knowledge into a process other disciplines can use.</p>
+            <p>Leather, textiles, foam, laminations, adhesives, and sewn assemblies do not behave like rigid CAD geometry. They stretch, compress, shear, bridge, wrinkle, telegraph, recover, and respond to heat, tension, backing construction, retention, and assembly sequence. My role is to translate those behaviors into engineering inputs early enough to influence the part—not simply troubleshoot it later.</p>
+            <p>I created the Trim Feasibility &amp; Upholstery Strategy Guide to give Design, Engineering, Surface Development, Vehicle Development, Supply Chain, and Upholstery a shared framework for those decisions: geometry, material behavior, foam and lamination, seam strategy, retention, installation method, risk zones, validation, and release.</p>
           </div>
         </div>
 
-        <div class="leadership-note">
-          <strong>The broader leadership pattern</strong>
-          <p>Define the intent clearly. Make ownership visible. Give each discipline appropriate freedom. Track maturity and risk. Validate physically. Capture the learning in a system that makes the next decision easier.</p>
+        <div class="translation-grid">
+          <div class="translation-head">SOFT-GOODS BEHAVIOR</div>
+          <div class="translation-head">ENGINEERING IMPLICATION</div>
+
+          <div class="translation-left"><strong>Stretch + recovery</strong><span>Material elongation and spring-back</span></div>
+          <div class="translation-right"><strong>Surface geometry</strong><span>Radii, draw height, runout, feature shape</span></div>
+
+          <div class="translation-left"><strong>Compression</strong><span>Foam collapse, stack thickness, softness</span></div>
+          <div class="translation-right"><strong>Foam / substrate relationship</strong><span>Support, gap / flush, interface condition</span></div>
+
+          <div class="translation-left"><strong>Shear + compound curvature</strong><span>Material movement in multiple directions</span></div>
+          <div class="translation-right"><strong>Surface developability</strong><span>Seam, relief, insert, or geometry revision</span></div>
+
+          <div class="translation-left"><strong>Tension + retention</strong><span>Where load is introduced and locked</span></div>
+          <div class="translation-right"><strong>Seam / attachment strategy</strong><span>Listing, J-clip, edge wrap, tension reset</span></div>
+
+          <div class="translation-left"><strong>Material buildup</strong><span>Leather, foam, scrim, adhesive, sewn stack</span></div>
+          <div class="translation-right"><strong>Packaging + tolerances</strong><span>Clearance, gap / flush, edge conditions</span></div>
+
+          <div class="translation-left"><strong>Grain / pile direction</strong><span>Visible directionality and distortion</span></div>
+          <div class="translation-right"><strong>Orientation + surface development</strong><span>Pattern direction, feature placement, visual quality</span></div>
+
+          <div class="translation-left"><strong>Process variation</strong><span>Operator, sewing, adhesive, assembly effects</span></div>
+          <div class="translation-right"><strong>Repeatability</strong><span>DFM, tolerances, validation, release gates</span></div>
         </div>
+
+        <div class="leadership-note">
+          <strong>Where I want to keep growing</strong>
+          <p>Bring soft-goods knowledge further upstream so engineering teams can account for material behavior earlier, reduce avoidable iteration, improve manufacturability, and protect visible quality before geometry and tooling are locked.</p>
+        </div>
+
       </section>
 
       <section class="section">
