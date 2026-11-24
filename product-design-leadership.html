@@ -79,6 +79,39 @@
     .cmf-title { margin-top: 12px; font-size: 17px; font-weight: 700; }
     .cmf-copy { margin-top: 5px; color: #666; font-size: 13px; line-height: 1.55; }
 
+    .cmf-system-band { margin-top: 44px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+    .cmf-system-item { padding: 24px 22px 26px; border-right: 1px solid #ddd; }
+    .cmf-system-item:last-child { border-right: 0; }
+    .cmf-system-item strong { display: block; font-size: 26px; letter-spacing: -.025em; margin-bottom: 5px; }
+    .cmf-system-item span { color: #666; font-size: 12px; line-height: 1.45; }
+
+    .cmf-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 46px; }
+    .cmf-board { background: #f5f4f1; padding: 10px; display: block; }
+    .cmf-board img { width: 100%; height: auto; max-height: none; object-fit: contain; aspect-ratio: auto; }
+    .cmf-pair figcaption { font-size: 13px; line-height: 1.55; }
+    .cmf-pair figcaption strong { color: #111; font-size: 17px; }
+
+    .cmf-combination { margin-top: 38px; display: grid; grid-template-columns: 1fr 70px 1fr 70px 1.35fr; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; align-items: stretch; }
+    .cmf-combination-left, .cmf-combination-right, .cmf-combination-result { padding: 25px 22px 27px; display: flex; flex-direction: column; justify-content: center; }
+    .cmf-combination-mid, .cmf-combination-arrow { display: flex; align-items: center; justify-content: center; border-left: 1px solid #ddd; border-right: 1px solid #ddd; color: #888; font-size: 24px; }
+    .cmf-mini-label { font-size: 10px; letter-spacing: .13em; color: #777; margin-bottom: 7px; }
+    .cmf-combination strong { font-size: 16px; line-height: 1.4; }
+
+    .palette-feature { margin-top: 52px; }
+    .palette-head { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: end; margin-bottom: 20px; }
+    .palette-head h3 { font-size: 24px; line-height: 1.28; letter-spacing: -.015em; font-weight: 600; }
+    .palette-head p { color: #555; font-size: 14px; line-height: 1.65; }
+    .palette-feature img { width: 100%; height: auto; object-fit: contain; aspect-ratio: auto; background: #f5f4f1; }
+    .palette-board-wide { margin-top: 24px; }
+    .palette-board-wide img { width: 100%; height: auto; display: block; }
+    .palette-board-wide figcaption { margin-top: 11px; font-size: 12px; color: #666; line-height: 1.55; }
+    .palette-board-wide figcaption strong { color: #111; }
+    .palette-samples { margin-top: 34px; }
+
+    .cmf-note { margin-top: 36px; padding: 28px 30px; background: #f5f4f1; max-width: 980px; }
+    .cmf-note strong { display: block; font-size: 17px; margin-bottom: 9px; }
+    .cmf-note p { color: #555; font-size: 14px; line-height: 1.65; }
+
     .development-chain { margin-top: 44px; display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid #ddd; border-left: 1px solid #ddd; }
     .dev-step { min-height: 125px; padding: 22px 18px; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; }
     .dev-step .small { font-size: 10px; color: #777; letter-spacing: .12em; margin-bottom: 8px; }
@@ -135,14 +168,20 @@
     @media (max-width: 800px) {
       header { align-items: flex-start; gap: 24px; }
       nav { gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
-      .meta-grid, .cmf-grid, .image-pair, .render-grid { grid-template-columns: 1fr; }
+      .meta-grid, .cmf-grid, .image-pair, .render-grid, .cmf-pair, .palette-head { grid-template-columns: 1fr; }
       .parallel { grid-template-columns: 1fr; }
+      .cmf-system-band { grid-template-columns: 1fr 1fr; }
+      .cmf-system-item:nth-child(2) { border-right: 0; }
+      .cmf-system-item:nth-child(-n+2) { border-bottom: 1px solid #ddd; }
+      .cmf-combination { grid-template-columns: 1fr; }
+      .cmf-combination-mid, .cmf-combination-arrow { min-height: 48px; border-left: 0; border-right: 0; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
       .parallel-mid { min-height: 50px; border-left: 0; border-right: 0; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
       .timeline { grid-template-columns: 1fr; }
       .image-trio { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) {
-      .charter-system, .development-chain, .feedback-loop, .translation { grid-template-columns: 1fr; }
+      .charter-system, .development-chain, .feedback-loop, .translation, .cmf-system-band { grid-template-columns: 1fr; }
+      .cmf-system-item { border-right: 0; border-bottom: 1px solid #ddd; }
     }
   </style>
 </head>
@@ -218,23 +257,71 @@
       <section class="section">
         <div class="section-label">02 · BUILD A SCALABLE PRODUCT LANGUAGE</div>
         <div class="two-col">
-          <h2>CMF had to work as a system—not a collection of one-off choices.</h2>
+          <h2>Build customer choice without creating uncontrolled complexity.</h2>
           <div class="body-copy">
-            <p>Kindred operates around limited option complexity, so the EV911 color and material strategy needed to support both customer choice and operational scale. I developed the exterior and interior colorways in parallel: two interior environments—warm <strong>Cork</strong> and cool <strong>Graphite</strong>—paired against an exterior palette that grew from eight colors to ten.</p>
-            <p>I created physical storyboards to communicate those relationships clearly. They became working design tools in the studio I set up and curate, helping internal teams and customers understand complete vehicle combinations rather than isolated swatches. The boards have also supported multiple sales and pre-orders.</p>
+            <p>I developed the EV911 exterior and interior CMF strategy as one system. Kindred's operating model favors a limited number of well-resolved options, so the goal was to create meaningful variation while keeping combinations interchangeable enough to support purchasing, production, and scale.</p>
+            <p>The result centered on two complete interior environments—warm <strong>Cork</strong> and cool <strong>Graphite</strong>—paired against an exterior palette that began with eight colors and later expanded to ten. I created the physical storyboards to make those relationships tangible for Design, leadership, operations, and customers.</p>
           </div>
         </div>
 
-        <div class="cmf-lead">The strategy was intentionally modular: a restrained number of interior environments that could pair convincingly across a broader exterior palette.</div>
-
-        <div class="cmf-grid">
-          <div class="cmf-card"><img src="ev911-cmf-cork.jpg" alt="EV911 Cork interior CMF storyboard"><div class="cmf-title">Cork — Warm Interior</div><div class="cmf-copy">Physical materials, paint relationship, and rendered vehicle context presented as one customer-facing CMF story.</div></div>
-          <div class="cmf-card"><img src="ev911-cmf-graphite.jpg" alt="EV911 Graphite interior CMF storyboard"><div class="cmf-title">Graphite — Cool Interior</div><div class="cmf-copy">A second complete environment built from the same vehicle architecture, supporting choice without uncontrolled complexity.</div></div>
+        <div class="cmf-system-band">
+          <div class="cmf-system-item"><strong>2</strong><span>Interior colorways</span></div>
+          <div class="cmf-system-item"><strong>8 → 10</strong><span>Exterior colors</span></div>
+          <div class="cmf-system-item"><strong>Modular</strong><span>Interior / exterior pairing strategy</span></div>
+          <div class="cmf-system-item"><strong>Physical + Digital</strong><span>Materials, paint samples, renders, and studio communication</span></div>
         </div>
 
-        <div class="image-pair">
-          <figure><img src="ev911-exterior-palette.jpg" alt="EV911 exterior color palette with rendered vehicle applications and physical paint samples"><figcaption>Exterior CMF strategy shown as complete vehicle colorways paired directly with the physical paint samples used to evaluate them.</figcaption></figure>
-          <figure><img src="ev911-cmf-studio.jpg" alt="EV911 exterior and interior CMF storyboards displayed together in the Kindred design studio"><figcaption>The exterior palette, Cork interior, and Graphite interior presented together in the Design Studio as one coherent vehicle-level CMF system.</figcaption></figure>
+        <div class="cmf-pair">
+          <figure>
+            <div class="cmf-board"><img src="ev911-cmf-cork-tight.jpg" alt="EV911 Cork warm interior CMF storyboard"></div>
+            <figcaption><strong>Cork — Warm Interior</strong><br>Warm leather and trim direction presented with the rendered interior as one complete environment.</figcaption>
+          </figure>
+          <figure>
+            <div class="cmf-board"><img src="ev911-cmf-graphite-tight.jpg" alt="EV911 Graphite cool interior CMF storyboard"></div>
+            <figcaption><strong>Graphite — Cool Interior</strong><br>A parallel cool-toned environment built from the same vehicle architecture and option strategy.</figcaption>
+          </figure>
+        </div>
+
+        <div class="cmf-combination">
+          <div class="cmf-combination-left">
+            <span class="cmf-mini-label">INTERIOR SYSTEM</span>
+            <strong>Cork / Graphite</strong>
+          </div>
+          <div class="cmf-combination-mid">×</div>
+          <div class="cmf-combination-right">
+            <span class="cmf-mini-label">EXTERIOR SYSTEM</span>
+            <strong>Shared color palette</strong>
+          </div>
+          <div class="cmf-combination-arrow">→</div>
+          <div class="cmf-combination-result">
+            <span class="cmf-mini-label">PROGRAM EFFECT</span>
+            <strong>Customer choice with fewer unique build paths</strong>
+          </div>
+        </div>
+
+        <div class="palette-feature">
+          <div class="palette-head">
+            <div>
+              <div class="cmf-mini-label">EXTERIOR COLOR STRATEGY</div>
+              <h3>Evaluate color at the vehicle level, then validate it physically.</h3>
+            </div>
+            <p>The exterior palette was developed as complete vehicle colorways rather than isolated paint chips. Each rendered application could then be checked directly against the corresponding physical paint sample before becoming part of the customer-facing palette.</p>
+          </div>
+
+          <figure class="palette-board-wide">
+            <img src="ev911-exterior-rendered-colors.jpg" alt="All eight EV911 rendered exterior colorways">
+            <figcaption><strong>Rendered palette</strong> — all eight original exterior colorways shown together so hue, value, differentiation, and period reference could be judged on the full vehicle.</figcaption>
+          </figure>
+
+          <figure class="palette-board-wide palette-samples">
+            <img src="ev911-exterior-paint-samples.jpg" alt="All eight EV911 physical exterior paint samples">
+            <figcaption><strong>Physical validation</strong> — the same eight colors represented as sprayed physical samples for real-world evaluation of metallic effect, depth, and finish.</figcaption>
+          </figure>
+        </div>
+
+        <div class="cmf-note">
+          <strong>Communication beyond the design team</strong>
+          <p>The same boards are installed in the Design Studio I set up and curate. They function as working product-definition tools for internal reviews and as a clear customer-facing way to understand complete vehicle combinations; the presentation has contributed to multiple sales and pre-orders.</p>
         </div>
       </section>
 
